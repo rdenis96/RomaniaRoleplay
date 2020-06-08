@@ -1,0 +1,6 @@
+<meta Condition="'$(Configuration)' == 'Debug'">
+    <info name="RomaniaRoleplay" author="DFR" type="gamemode" />
+  
+    <script Condition="'$(Configuration)' == 'Debug'" src="bin/x64/Debug/netcoreapp3.1/RomaniaRoleplay.dll" />
+    <script Condition="'$(Configuration)' == 'Release'" src="bin/x64/Debug/netcoreapp3.1/RomaniaRoleplay.dll" />
+</meta>
