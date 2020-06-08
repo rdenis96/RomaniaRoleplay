@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomaniaRoleplay", "RomaniaRoleplay\RomaniaRoleplay.csproj", "{A07E9D53-8B7B-4EBE-80CB-15209E60539C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RomaniaRoleplay", "RomaniaRoleplay\RomaniaRoleplay.csproj", "{A07E9D53-8B7B-4EBE-80CB-15209E60539C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{973A11AC-E82D-494D-9ACB-CDB87C7BAC55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{973A11AC-E82D-494D-9ACB-CDB87C7BAC55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{746110B9-88C7-4D86-AF3D-FE4CF6D0463B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{746110B9-88C7-4D86-AF3D-FE4CF6D0463B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{241E8251-9BF2-4356-907D-AC3CB00CE6BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{241E8251-9BF2-4356-907D-AC3CB00CE6BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "Helper\Helper.csproj", "{2D8E0C23-68AA-4C4B-B22B-878C7382B20A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helper", "Helper\Helper.csproj", "{2D8E0C23-68AA-4C4B-B22B-878C7382B20A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UcpRomaniaRoleplay", "UcpRomaniaRoleplay\UcpRomaniaRoleplay.csproj", "{BA8417D3-C8D1-4C73-A949-38A1547185E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,14 @@ Global
 		{2D8E0C23-68AA-4C4B-B22B-878C7382B20A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D8E0C23-68AA-4C4B-B22B-878C7382B20A}.Release|x64.ActiveCfg = Release|x64
 		{2D8E0C23-68AA-4C4B-B22B-878C7382B20A}.Release|x64.Build.0 = Release|x64
+		{BA8417D3-C8D1-4C73-A949-38A1547185E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA8417D3-C8D1-4C73-A949-38A1547185E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA8417D3-C8D1-4C73-A949-38A1547185E3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BA8417D3-C8D1-4C73-A949-38A1547185E3}.Debug|x64.Build.0 = Debug|Any CPU
+		{BA8417D3-C8D1-4C73-A949-38A1547185E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA8417D3-C8D1-4C73-A949-38A1547185E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA8417D3-C8D1-4C73-A949-38A1547185E3}.Release|x64.ActiveCfg = Release|Any CPU
+		{BA8417D3-C8D1-4C73-A949-38A1547185E3}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
