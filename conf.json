@@ -1,10 +1,9 @@
 {
 	"maxplayers" : 1000,
-	"name" : "Nagga RPG", 
+	"name" : "Romania Roleplay", 
 	"gamemode" : "freeroam", 
 	"stream-distance" : 500.0,
 	"announce" : false,
 	"csharp" : "enabled",
-	"voice-chat": true,
 	"port": 22005
 }
