@@ -1,0 +1,575 @@
+
+==================[5/25/2020 12:10:44 PM]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll'. The system cannot find the file specified.
+File name: 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll'
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+
+
+=========================================================
+
+==================[5/25/2020 12:10:44 PM]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.EntityFrameworkCore, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The system cannot find the file specified.
+File name: 'Microsoft.EntityFrameworkCore, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+   at PlayerInfo DataLayer.Repositories.Players.PlayerRepository.GetByUsernameAndPassword(string username, string password)
+   at PlayerInfo BusinessLogic.Workers.Players.PlayersWorker.GetPlayerInfo(string username, string password) in D:/Games/RAGEMP/server-files/dotnet/resources/BusinessLogic/Workers/Players/PlayersWorker.cs:line 28
+
+
+=========================================================
+
+==================[5/25/2020 12:10:45 PM]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.EntityFrameworkCore, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The system cannot find the file specified.
+File name: 'Microsoft.EntityFrameworkCore, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+   at PlayerInfo DataLayer.Repositories.Players.PlayerRepository.GetByUsernameAndPassword(string username, string password)
+   at PlayerInfo BusinessLogic.Workers.Players.PlayersWorker.GetPlayerInfo(string username, string password) in D:/Games/RAGEMP/server-files/dotnet/resources/BusinessLogic/Workers/Players/PlayersWorker.cs:line 28
+   at void NaggaServer.Controllers.PlayerController.OnPlayerLoginAttempt(Player player, string loginViewModel) in D:/Games/RAGEMP/server-files/dotnet/resources/NaggaServer/Controllers/PlayerController.cs:line 35
+
+
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[5/25/2020 12:10:48 PM]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll'. The system cannot find the file specified.
+File name: 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll'
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+
+
+=========================================================
+
+==================[5/25/2020 12:10:48 PM]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.EntityFrameworkCore, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The system cannot find the file specified.
+File name: 'Microsoft.EntityFrameworkCore, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'
+   at PlayerInfo DataLayer.Repositories.Players.PlayerRepository.GetByUsernameAndPassword(string username, string password)
+   at PlayerInfo BusinessLogic.Workers.Play
+==================[5/25/2020 12:26:21 PM]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.resources.dll'. The system cannot find the file specified.
+File name: 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.resources.dll'
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+
+
+=========================================================
+
+==================[5/25/2020 12:26:21 PM]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.resources.dll'. The system cannot find the file specified.
+File name: 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.resources.dll'
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+
+
+=========================================================
+
+==================[5/25/2020 12:26:21 PM]==================
+System.PlatformNotSupportedException: Microsoft.Data.SqlClient is not supported on this platform.
+   at new Microsoft.Data.SqlClient.SqlConnection(string connectionString)
+=========================================================
+
+==================[5/25/2020 12:26:21 PM]==================
+System.PlatformNotSupportedException: Microsoft.Data.SqlClient is not supported on this platform.
+   at new Microsoft.Data.SqlClient.SqlConnection(string connectionString)
+   at DbConnection Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.CreateDbConnection()
+   at DbConnection Microsoft.EntityFrameworkCore.Storage.RelationalConnection.get_DbConnection()
+   at DbCommand Microsoft.EntityFrameworkCore.Storage.RelationalCommand.CreateCommand(RelationalCommandParameterObject parameterObject, Guid commandId, DbCommandMethod commandMethod)
+   at RelationalDataReader Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.InitializeReader(DbContext _, bool result)
+   at TResult Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute<TState, TResult>(TState state, Func<DbContext, TState, TResult> operation, Func<DbContext, TState, ExecutionResult<TResult>> verifySucceeded)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.MoveNext()
+=========================================================
+
+==================[5/25/2020 12:27:36 PM]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.PlatformNotSupportedException: Microsoft.Data.SqlClient is not supported on this platform.
+   at new Microsoft.Data.SqlClient.SqlConnection(string connectionString)
+   at DbConnection Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.CreateDbConnection()
+   at DbConnection Microsoft.EntityFrameworkCore.Storage.RelationalConnection.get_DbConnection()
+   at DbCommand Microsoft.EntityFrameworkCore.Storage.RelationalCommand.CreateCommand(RelationalCommandParameterObject parameterObject, Guid commandId, DbCommandMethod commandMethod)
+   at RelationalDataReader Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.InitializeReader(DbContext _, bool result)
+   at TResult Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute<T
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Players.IdentityCard]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Players.IdentityCard]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.PlatformNotSupportedException: System.Data.SqlClient is not supported on this platform.
+   at new System.Data.SqlClient.SqlConnection(string connectionString)
+=========================================================
+
+==================[5/25/2020 12:37:35 PM]==================
+System.PlatformNotSupportedException: System.Data.SqlClient is not supported on this platform.
+   at new System.Data.SqlClient.SqlConnection(string connectionString)
+   at DbConnection Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.CreateDbConnection()
+   at T Microsoft.EntityFrameworkCore.Internal.LazyRef<T>.get_Value()
+   at DbConnection Microsoft.EntityFrameworkCore.Storage.RelationalConnection.get_DbConnection()
+   at bool Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(bool errorsExpected)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.BufferlessMoveNext(DbContext _, bool buffer)
+   at TResult Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute<TState, TResult>(TState state, Func<DbContext, TState, TResult> operation, Func<DbContext, TState, ExecutionResult<TResult>> verifySucceeded)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.MoveNext()
+   at bool System.Linq.Enumerable+SelectEnumerableIterator<TSource, TResult>.MoveNext()
+   at TSource Sys
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Players.IdentityCard]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Players.IdentityCard]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\System.Data.SqlClient.resources.dll'. The system cannot find the file specified.
+File name: 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\System.Data.SqlClient.resources.dll'
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+
+
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\System.Data.SqlClient.resources.dll'. The system cannot find the file specified.
+File name: 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\System.Data.SqlClient.resources.dll'
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+
+
+=========================================================
+
+==================[5/25/2020 12:42:05 PM]==================
+System.PlatformNotSupportedException: System.Data.SqlClient is not supported on this platform.
+   at new S
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Players.IdentityCard]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Players.IdentityCard]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\System.Data.SqlClient.resources.dll'. The system cannot find the file specified.
+File name: 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\System.Data.SqlClient.resources.dll'
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+
+
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.IO.FileNotFoundException: Could not load file or assembly 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\System.Data.SqlClient.resources.dll'. The system cannot find the file specified.
+File name: 'D:\Games\RAGEMP\server-files\dotnet\resources\NaggaServer\bin\x64\Debug\netcoreapp3.1\System.Data.SqlClient.resources.dll'
+   at void System.Runtime.Loader.AssemblyLoadContext.LoadFromPath(IntPtr ptrNativeAssemblyLoadContext, string ilPath, string niPath, ObjectHandleOnStack retAssembly)
+
+
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.PlatformNotSupportedException: System.Data.SqlClient is not supported on this platform.
+   at new System.Data.SqlClient.SqlConnection(string connectionString)
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.PlatformNotSupportedException: System.Data.SqlClient is not supported on this platform.
+   at new System.Data.SqlClient.SqlConnection(string connectionString)
+   at DbConnection Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.CreateDbConnection()
+   at T Microsoft.EntityFrameworkCore.Internal.LazyRef<T>.get_Value()
+   at DbConnection Microsoft.EntityFrameworkCore.Storage.RelationalConnection.get_DbConnection()
+   at bool Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(bool errorsExpected)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.BufferlessMoveNext(DbContext _, bool buffer)
+   at TResult Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute<TState, TResult>(TState state, Func<DbContext, TState, TResult> operation, Func<DbContext, TState, ExecutionResult<TResult>> verifySucceeded)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.MoveNext()
+   at bool System.Linq.Enumerable+SelectEnumerableIterator<TSource, TResult>.MoveNext()
+   at TSource System.Linq.Enumerable.TryGetFirst<TSource>(IEnumerable<TSource> source, out bool found)
+   at PlayerInfoWrapper lambda_method(Closure)
+   at IEnumerator<T> Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider+ResultEnumerable<T>.GetEnumerator()
+   at IEnumerable<TOut> Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities<TOut, TIn>(IEnumerable<TOut> results, QueryContext queryContext, IList<EntityTrackingInfo> entityTrackingInfos, IList<Func<TIn, object>> entityAccessors)+MoveNext()
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider+ExceptionInterceptor<T>+EnumeratorExceptionInterceptor.MoveNext()
+=========================================================
+
+==================[5/25/2020 12:43:16 PM]==================
+System.PlatformNotSupportedException: System.Data.SqlClient is not supported on this platform.
+   at new System.Data.SqlClient.SqlConnection(string connectionString)
+   at DbConnection Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.CreateDbConnection()
+   at T Microsoft.EntityFrameworkCore.Internal.LazyRef<T>.get_Value()
+   at DbConnection Microsoft.EntityFrameworkCore.Storage.RelationalConnection.get_DbConnection()
+   at bool Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(bool errorsExpected)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.BufferlessMoveNext(DbContext _, bool buffer)
+   at TResult Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute<TState, TResult>(TState state, Func<DbContext, TState, TResult> operation, Func<DbContext, TState, ExecutionResult<TResult>> verifySucceeded)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.MoveNext()
+   at bool System.Linq.Enumerable+SelectEnumerableIterator<TSource, TResult>.MoveNext()
+   at TSource System.Linq.Enumerable.TryGetFirst<TSource>(IEnumerable<TSource> source, out bool found)
+   at PlayerInfoWrapper lambda_method(Closure)
+   at IEnumerator<T> Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider+ResultEnumerable<T>.GetEnumerator()
+   at IEnumerable<TOut> Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities<TOut, TIn>(IEnumerable<TOut> results, QueryContext queryContext, IList<EntityTrackingInfo> entityTrackingInfos, IList<Func<TIn, object>> entityAccessors)+MoveNext()
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider+ExceptionInterceptor<T>+EnumeratorExceptionInterceptor.MoveNext()
+   at TSource System.Linq.Enumerable.TryGetFirst<TSource>(IEnumerable<TSource> source, out bool found)
+   at TSource System.Linq.Enumerable.First<TSource>(I
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Players.IdentityCard]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Common.Vector3Wrapper]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.ArgumentException: Field 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],System.Collections.Generic.IEnumerable`1[Domain.Models.Players.IdentityCard]].Inner' is not defined for type 'Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor+TransparentIdentifier`2[Domain.Models.Players.PlayerInfoWrapper,Domain.Models.Common.Vector3Wrapper],Domain.Models.Common.Vector3Wrapper],Domain.Models.Players.IdentityCard]'
+   at MemberExpression System.Linq.Expressions.Expression.Field(Expression expression, FieldInfo field)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.PlatformNotSupportedException: System.Data.SqlClient is not supported on this platform.
+   at new System.Data.SqlClient.SqlConnection(string connectionString)
+=========================================================
+
+==================[5/25/2020 12:47:46 PM]==================
+System.PlatformNotSupportedException: System.Data.SqlClient is not supported on this platform.
+   at new System.Data.SqlClient.SqlConnection(string connectionString)
+   at DbConnection Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.CreateDbConnection()
+   at T Microsoft.EntityFrameworkCore.Internal.LazyRef<T>.get_Value()
+   at DbConnection Microsoft.EntityFrameworkCore.Storage.RelationalConnection.get_DbConnection()
+   at bool Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(bool errorsExpected)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.BufferlessMoveNext(DbContext _, bool buffer)
+   at TResult Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute<TState, TResult>(TState state, Func<DbContext, TState, TResult> operation, Func<DbContext, TState, ExecutionResult<TResult>> verifySucceeded)
+   at bool Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable<T>+Enumerator.MoveNext()
+   at bool System.Linq.Enumerable+SelectEnumerableIterator<TSource, TResult>.MoveNext()
+   at TSource Sys
+==================[5/25/2020 1:28:58 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.Email' in 'field list'
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[5/25/2020 1:28:58 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.Email' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.Email' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+=========================================================
+
+==================[5/25/2020 1:28:58 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.Email' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.Email' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 391
+=========================================================
+
+==================[5/25/2020 1:28:58 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.Email' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.Email' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 391
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[5/25/2020 1:28:58 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.Email' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.Email' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, Cancellati
+==================[5/26/2020 11:21:26 AM]==================
+System.InvalidCastException: Unable to convert MySQL date/time to System.DateTime, set AllowZeroDateTime=True or ConvertZeroDateTime=True in the connection string. See https://mysqlconnector.net/connection-options/
+   at object MySqlConnector.Core.TextRow.ParseDateTime(ReadOnlySpan<byte> value) in C:/projects/mysqlconnector/src/MySqlConnector/Core/TextRow.cs:line 163
+=========================================================
+
+==================[5/26/2020 11:21:26 AM]==================
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> System.InvalidCastException: Unable to convert MySQL date/time to System.DateTime, set AllowZeroDateTime=True or ConvertZeroDateTime=True in the connection string. See https://mysqlconnector.net/connection-options/
+   at object MySqlConnector.Core.TextRow.ParseDateTime(ReadOnlySpan<byte> value) in C:/projects/mysqlconnector/src/MySqlConnector/Core/TextRow.cs:line 163
+   at object MySqlConnector.Core.TextRow.GetValueCore(ReadOnlySpan<byte> data, ColumnDefinitionPayload columnDefinition) in C:/projects/mysqlconnector/src/MySqlConnector/Core/TextRow.cs:line 87
+   at object MySqlConnector.Core.Row.GetValue(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/Core/Row.cs:line 40
+   at DateTime MySqlConnector.Core.Row.GetDateTime(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/Core/Row.cs:line 328
+   at DateTime MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 251
+   at object[] lambda_method(Closure, DbDataReader)
+   at ValueBuffer Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at int Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithPropagation(int commandIndex, RelationalDataReader reader)
+   at void Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+   --- End of inner exception stack trace ---
+   at void Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+=========================================================
+
+==================[5/26/2020 11:21:26 AM]==================
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> System.InvalidCastException: Unable to convert MySQL date/time to System.DateTime, set AllowZeroDateTime=True or ConvertZeroDateTime=True in the connection string. See https://mysqlconnector.net/connection-options/
+   at object MySqlConnector.Core.TextRow.ParseDateTime(ReadOnlySpan<byte> value) in C:/projects/mysqlconnector/src/MySqlConnector/Core/TextRow.cs:line 163
+   at object MySqlConnector.Core.TextRow.GetValueCore(ReadOnlySpan<byte> data, ColumnDefinitionPayload columnDefinition) in C:/projects/mysqlconnector/src/MySqlConnector/Core/TextRow.cs:line 87
+   at object MySqlConnector.Core.Row.GetValue(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/Core/Row.cs:line 40
+   at DateTime MySqlConnector.Core.Row.GetDateTime(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/Core/Row.cs:line 328
+   at DateTime MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 251
+   at object[] lambda_method(Closure, DbDataReader)
+   at ValueBuffer Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at int Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithPropagation(int commandIndex, RelationalDataReader reader)
+   at void Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+   --- End of inner exception stack trace ---
+   at void Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+   at void Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+=========================================================
+
+==================[5/26/2020 11:21:26 AM]==================
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> System.InvalidCastException: Unable to convert MySQL date/time to System.DateTime, set AllowZeroDateTime=True or ConvertZeroDateTime=True in the connection string. See https://mysqlconnector.net/connection-options/
+   at object MySqlConnector.Core.TextRow.ParseDateTime(ReadOnlySpan<byte> value) in C:/projects/mysqlconnector/src/MySqlConnector/Core/TextRow.cs:line 163
+   at object MySqlConnector.Core.TextRow.GetValueCore(ReadOnlySpan<byte> data, ColumnDefinitionPayload columnDefinition) in C:/projects/mysqlconnector/src/MySqlConnector/Core/TextRow.cs:line 87
+   at object MySqlConnector.Core.Row.GetValue(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/Core/Row.cs:line 40
+   at DateTime MySqlConnector.Core.Row.GetDateTime(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/Core/Row.cs:line 328
+   at DateTime MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 251
+   at object[] lambda_method(Closure, DbDataReader)
+   at ValueBuffer Microsoft.EntityFrameworkCore.Storage.Internal.TypedRelationalValueBufferFactory.Create(DbDataReader dataReader)
+   at int Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithPropagation(int commandIndex, RelationalDataReader reader)
+   at void Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+   --- End of inner exception stack trace ---
+   at void Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+   at void Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at int Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable<ModificationCommandBatch> commandBatches, IRelationalConnection connection)
+   at int Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList<IUpdateEntry> entries)
+   at int Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList<IUpdateEntry> entriesToSave)
+   at int Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, bool acceptAllChangesOnSuccess)
+=========================================================
+
+==================[5/26/2020 11:21:26 AM]==================
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> System.InvalidCastException: Unable to convert MySQL date/time to System.DateTime, set AllowZeroDateTime=True or ConvertZeroDateTime=True in the connection string. See https://mysqlconnector.net/connection-options/
+   at object MySqlConnector.Core.TextRow.ParseDateTime(ReadOnlySpan<byte> value) in C:/projects/mysqlconnector/src/MySqlConnector/Core/TextRow.cs:line 163
+   at object MySqlConnector.Core.TextRow.GetValueCore(ReadOnlySpan<byte> data, ColumnDefinitionPayload columnDefinition) in C:/projects/mysqlconnector/src/MySqlConnector/Core/TextRow.cs:line 87
+   at object MySqlConnector.Core.Row.GetValue(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/Core/Row.cs:line 40
+   at DateTime MySqlConnector.Core.Row.GetDateTime(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/Core/Row.cs:line 328
+   at DateTime MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(int ordinal) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.
+==================[5/26/2020 2:38:17 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.IsLogged' in 'field list'
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[5/26/2020 2:38:17 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.IsLogged' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.IsLogged' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+=========================================================
+
+==================[5/26/2020 2:38:17 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.IsLogged' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.IsLogged' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 391
+=========================================================
+
+==================[5/26/2020 2:38:17 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.IsLogged' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.IsLogged' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 391
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[5/26/2020 2:38:17 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.IsLogged' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'p.IsLogged' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBeha

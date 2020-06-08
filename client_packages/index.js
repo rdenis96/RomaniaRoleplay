@@ -1,0 +1,1 @@
+require('RomaniaRoleplay/index.js');

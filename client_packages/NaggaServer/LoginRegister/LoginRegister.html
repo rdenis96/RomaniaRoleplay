@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sign In - Nagga - RPG</title>
+
+	<link href="../Resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="../Resources/jQuery/jquery.min.js"></script>
+	<script src="../Resources/bootstrap/js/bootstrap.min.js"></script>
+	<link href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" rel="stylesheet">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="LoginRegister.css">
+	<script src="LoginRegister.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div id="signIn" class="card">
+				<div class="card-header">
+					<h3>Sign In</h3>
+					<div class="d-flex justify-content-end social_icon">
+						<span><i class="fab fa-facebook-square"></i></span>
+						<span><i class="fab fa-youtube-square"></i></span>
+						<span><i class="fab fa-instagram-square"></i></span>
+					</div>
+				</div>
+				<div class="card-body">
+					<form id="loginForm">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input id="loginUsername" type="text" class="form-control" placeholder="username">
+						</div>
+						<div class="float-right">
+							<a href="#">Forgot your password?</a>
+						</div>
+						<div class="input-group form-group">
+
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input id="loginPassword" type="password" class="form-control" placeholder="password">
+						</div>
+						<div class="d-flex align-items-center justify-content-between">
+
+							<div class="row align-items-center remember">
+								<input type="checkbox">Remember Me
+							</div>
+							<div class="">
+								<input id="signInButton" type="submit" value="Sign In" class="btn float-right primaryButton">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div id="loginResponseMessage" class="card-footer">
+					<div class="input-group form-group">
+						<input id="registerLink" type="button" value="Create an account" class="btn secondaryButton">
+					</div>
+				</div>
+			</div>
+			<div id="register" class="card">
+				<div class="card-header">
+					<h3>Register</h3>
+					<div class="d-flex justify-content-end social_icon">
+						<span><i class="fab fa-facebook-square"></i></span>
+						<span><i class="fab fa-youtube-square"></i></span>
+						<span><i class="fab fa-instagram-square"></i></span>
+					</div>
+				</div>
+				<div class="card-body">
+					<form id="registerForm">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input id="registerUsername" type="text" class="form-control" placeholder="username">
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+							</div>
+							<input id="registerEmail" type="email" class="form-control" placeholder="email">
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input id="registerPassword" type="password" class="form-control" placeholder="password">
+						</div>
+						<div class="d-flex align-items-center justify-content-between">
+							<div>
+							</div>
+							<div>
+								<input id="registerButton" type="submit" value="Register" class="btn float-right primaryButton">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div id="registerResponseMessage" class="card-footer">
+					<div class="d-flex justify-content-center links">
+						Have an account?<a id="signInLink" href="#">Sign In</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
