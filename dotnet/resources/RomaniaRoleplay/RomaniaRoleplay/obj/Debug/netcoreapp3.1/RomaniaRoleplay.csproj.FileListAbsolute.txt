@@ -1,9 +1,0 @@
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\RomaniaRoleplay\bin\Debug\netcoreapp3.1\RomaniaRoleplay.deps.json
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\RomaniaRoleplay\bin\Debug\netcoreapp3.1\RomaniaRoleplay.dll
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\RomaniaRoleplay\bin\Debug\netcoreapp3.1\RomaniaRoleplay.pdb
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\RomaniaRoleplay\obj\Debug\netcoreapp3.1\RomaniaRoleplay.csprojAssemblyReference.cache
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\RomaniaRoleplay\obj\Debug\netcoreapp3.1\RomaniaRoleplay.AssemblyInfoInputs.cache
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\RomaniaRoleplay\obj\Debug\netcoreapp3.1\RomaniaRoleplay.AssemblyInfo.cs
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\RomaniaRoleplay\obj\Debug\netcoreapp3.1\RomaniaRoleplay.csproj.CoreCompileInputs.cache
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\RomaniaRoleplay\obj\Debug\netcoreapp3.1\RomaniaRoleplay.dll
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\RomaniaRoleplay\obj\Debug\netcoreapp3.1\RomaniaRoleplay.pdb

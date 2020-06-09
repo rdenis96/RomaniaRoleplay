@@ -1,5 +1,0 @@
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.deps.json
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csprojAssemblyReference.cache
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfoInputs.cache
-D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfo.cs
