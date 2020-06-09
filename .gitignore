@@ -4,3 +4,9 @@ dotnet/resources/RomaniaRoleplay/DataLayer/bin/*
 dotnet/resources/RomaniaRoleplay/Domain/bin/*
 dotnet/resources/RomaniaRoleplay/Helper/bin/*
 dotnet/resources/RomaniaRoleplay/UcpRomaniaRoleplay/bin/*
+dotnet/resources/RomaniaRoleplay/RomaniaRoleplay/obj/*
+dotnet/resources/RomaniaRoleplay/BusinessLogic/obj/*
+dotnet/resources/RomaniaRoleplay/DataLayer/obj/*
+dotnet/resources/RomaniaRoleplay/Domain/obj/*
+dotnet/resources/RomaniaRoleplay/Helper/obj/*
+dotnet/resources/RomaniaRoleplay/UcpRomaniaRoleplay/obj/*
