@@ -15,7 +15,45 @@
 </head>
 
 <body>
-	
+	<video id="myVideo" preload="auto" autoplay="true" loop="loop" volume="1">
+		<source src="background.mp4" type="video/mp4">
+	</video>
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+				<div class="card-header">
+					<h3>BINE ATI REVENIT!</h3>
+				</div>
+				<div class="card-body">
+					<form id="loginForm">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input id="loginUsername" type="text" class="form-control" placeholder="Nume utilizator">
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-unlock"></i></span>
+							</div>
+							<input id="loginPassword" type="password" class="form-control" placeholder="Parola">
+						</div>
+					</form>
+				</div>
+				<div id="loginResponseMessage" class="card-footer card-footer-extended form-inline">
+						<span class="col-md-3 form-group btn btn-sm">
+							<img id="forgotPass" src="forgotpasswordbutton.png" class="forgotPassImage">
+						</span>
+						<span class="col-md-9 form-group btn btn-sm">
+							<input id="registerLink" type="button" value="LOGIN" class="submitButton">
+						</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="logo">
+		<img id src="logo.png" class="mb-0 mr-0" />
+	</div>
 </body>
 
 </html>
