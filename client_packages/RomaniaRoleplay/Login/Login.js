@@ -8,4 +8,7 @@ $(document).ready(function (e) {
         event.preventDefault();
         mp.trigger('loginInformationToServer', loginModelJson);
     });
+
+    $("#myVideo").prop("autoplay", true);
+    $("#myVideo").get(0).load();
 });
