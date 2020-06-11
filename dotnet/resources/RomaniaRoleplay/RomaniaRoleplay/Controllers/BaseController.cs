@@ -25,7 +25,7 @@ namespace RomaniaRoleplay.Controllers
         public void OnPlayerConnected(Player player)
         {
             NAPI.Entity.SetEntityTransparency(player, 0);
-            player.TriggerEvent("onPlayerConnected");
+            player.TriggerEvent("onUserConnected");
         }
 
         [ServerEvent(Event.PlayerDisconnected)]

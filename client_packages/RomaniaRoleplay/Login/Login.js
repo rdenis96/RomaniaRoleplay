@@ -1,5 +1,5 @@
 $(document).ready(function (e) {
-    $("#loginForm").submit(function (event) {
+    $("#submitLogin").click(function (event) {
         var loginModel = {
             Username: $('#loginUsername').val(),
             Password: $('#loginPassword').val()

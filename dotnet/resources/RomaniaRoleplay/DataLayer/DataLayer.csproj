@@ -3,6 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Platforms>AnyCPU;x64</Platforms>
+    <OutputType>Library</OutputType>
+	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutputPath>D:\Games\RAGEMP\server-files\dotnet\resources\RomaniaRoleplay\RomaniaRoleplay\bin\x64\Debug\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
