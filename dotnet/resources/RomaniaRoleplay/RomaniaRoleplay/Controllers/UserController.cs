@@ -23,7 +23,9 @@ namespace RomaniaRoleplay.Controllers
                 _usersWorker.Update(dbPlayer);
 
                 player.SetSkin(PedHash.Swat01SMY); //for testing, will be removed
+
                 NAPI.Player.SpawnPlayer(player, new Vector3(-1036.755f, -2737.948f, 21.2772f));
+                NAPI.Entity.SetEntityTransparency(player, 255);
             }
             player.TriggerEvent("onUserLoginResponse", dbPlayer);
 

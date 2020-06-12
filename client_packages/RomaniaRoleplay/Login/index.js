@@ -1,6 +1,6 @@
 var welcomePage = null;
 
-mp.events.add('onPlayerConnected', () => {
+mp.events.add('onUserConnected', () => {
 	mp.gui.chat.activate(false);
 	mp.game.player.setInvincible(true);
 	mp.players.local.freezePosition(true);
@@ -9,10 +9,10 @@ mp.events.add('onPlayerConnected', () => {
 });
 
 mp.events.add('loginInformationToServer', (loginModel) => {
-	mp.events.callRemote('OnPlayerLoginAttempt', loginModel);
+	mp.events.callRemote('OnUserLoginAttempt', loginModel);
 });
 
-mp.events.add('onPlayerLoginResponse', (playerInfo) => {
+mp.events.add('onUserLoginResponse', (playerInfo) => {
 	welcomePage.execute(`$(\"#loginResponseMessage\").find(\"#loginMessage\").remove();`)
 	if (playerInfo !== null && playerInfo !== 'undefined') {
 		welcomePage.execute(`$(\"#signInButton\").prop(\"disabled\", true); var alertElement = $(\'<div id="loginMessage" class="alert alert-success">Autentificare reusita!</div >\'); \
