@@ -1,0 +1,103 @@
+/* Made with love by Mutiullah Samim*/
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,
+body {
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    color:white;
+}
+
+#myVideo {
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 350px;
+    background-color: rgba(191, 191, 191, 0.3) !important;
+}
+
+.card-header h3 {
+    text-align: center;
+}
+
+.card-footer-extended {
+    background-color: rgb(200, 200, 200, 0.3) !important;
+}
+
+.input-group-prepend{
+    margin-right: 0px !important;
+}
+
+.input-group-prepend span {
+    width: 30px;
+    border: 0 !important;
+    color:white !important;
+    border-color: rgba(191, 191, 191, 0.3) !important;
+    background-color: rgba(191, 191, 191, 0.3) !important;
+}
+
+input[type=text], input[type=password]{
+    border-color: rgba(191, 191, 191, 0.3) !important;
+    color: white !important;
+    background-color: rgba(191, 191, 191, 0.3) !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.submitButton {
+    background-color: #336d31;
+    border: 2px solid #295927;
+    border-radius: 8px !important;
+    color:white;
+    font-size: x-large;
+    font-weight: bold;
+    height: 40px;
+    width: 250px;
+    
+}
+
+.submitButton:hover {
+    background-color: #52b04f;
+    color:white;
+}
+
+.forgotPassImage{
+    cursor: pointer;
+    background-color: #336d31;
+    border: 2px solid #295927;
+    border-radius: 8px !important;
+    height: 40px;
+    width: 80%;
+}
+
+.forgotPassImage:hover{
+    background-color: #52b04f;
+}
+
+.logo{
+    position: fixed; 
+    bottom: 0px; 
+    right: 0px;
+}
+
+.logo>img{
+    width: 150px;
+    height: 200px;
+}
