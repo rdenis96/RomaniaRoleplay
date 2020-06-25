@@ -1,0 +1,145 @@
+
+==================[6/24/2020 6:11:28 PM]==================
+Newtonsoft.Json.JsonReaderException: Input string '9.245381323335835' is not a valid integer. Path 'Skin.Chest', line 1, position 249.
+   at void Newtonsoft.Json.JsonTextReader.ParseReadNumber(ReadType readType, char firstChar, int initialPosition)
+=========================================================
+
+==================[6/24/2020 6:11:28 PM]==================
+Newtonsoft.Json.JsonReaderException: Input string '9.245381323335835' is not a valid integer. Path 'Skin.Chest', line 1, position 249.
+   at void Newtonsoft.Json.JsonTextReader.ParseReadNumber(ReadType readType, char firstChar, int initialPosition)
+   at void Newtonsoft.Json.JsonTextReader.ParseNumber(ReadType readType)
+   at object Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   at int? Newtonsoft.Json.JsonTextReader.ReadAsInt32()
+   at bool Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, bool hasConverter)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, string id)
+=========================================================
+
+==================[6/24/2020 6:11:28 PM]==================
+Newtonsoft.Json.JsonReaderException: Input string '9.245381323335835' is not a valid integer. Path 'Skin.Chest', line 1, position 249.
+   at void Newtonsoft.Json.JsonTextReader.ParseReadNumber(ReadType readType, char firstChar, int initialPosition)
+   at void Newtonsoft.Json.JsonTextReader.ParseNumber(ReadType readType)
+   at object Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   at int? Newtonsoft.Json.JsonTextReader.ReadAsInt32()
+   at bool Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, bool hasConverter)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, string id)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, object existingValue)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, object existingValue)
+   at bool Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, object target)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, string id)
+=========================================================
+
+==================[6/24/2020 6:11:28 PM]==================
+Newtonsoft.Json.JsonReaderException: Input string '9.245381323335835' is not a valid integer. Path 'Skin.Chest', line 1, position 249.
+   at void Newtonsoft.Json.JsonTextReader.ParseReadNumber(ReadType readType, char firstChar, int initialPosition)
+   at void Newtonsoft.Json.JsonTextReader.ParseNumber(ReadType readType)
+   at object Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   at int? Newtonsoft.Json.JsonTextReader.ReadAsInt32()
+   at bool Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, bool hasConverter)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, string id)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember,
+==================[6/24/2020 8:08:55 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'c.TimePlayed' in 'field list'
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[6/24/2020 8:08:55 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'c.TimePlayed' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'c.TimePlayed' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+=========================================================
+
+==================[6/24/2020 8:08:55 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'c.TimePlayed' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'c.TimePlayed' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 391
+=========================================================
+
+==================[6/24/2020 8:08:55 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'c.TimePlayed' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'c.TimePlayed' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 391
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[6/24/2020 8:08:55 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'c.TimePlayed' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'c.TimePlayed' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavio
+==================[6/24/2020 8:10:03 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 's.Model' in 'field list'
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[6/24/2020 8:10:03 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 's.Model' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 's.Model' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+=========================================================
+
+==================[6/24/2020 8:10:03 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 's.Model' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 's.Model' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 391
+=========================================================
+
+==================[6/24/2020 8:10:03 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 's.Model' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 's.Model' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 391
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[6/24/2020 8:10:03 PM]==================
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 's.Model' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 's.Model' in 'field list'
+   at async Task MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in C:/projects/mysqlconnector/src/MySqlConnector/Core/ResultSet.cs:line 49
+   at void MySql.Data.MySqlClient.MySqlDataReader.ActivateResultSet() in C:/projects/mysqlconnector/src/MySqlConnector/MySql.Data.MySqlClient/MySqlDataReader.cs:line 130
+   at async Task<MySqlDataReader> MySql.Data.MySqlClient.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary<string, CachedProcedure> cachedProcedures, IMySqlCommand command, CommandBehavior behavior, IOBehavior ioBehavior, Cancellati
+==================[6/24/2020 9:22:46 PM]==================
+Newtonsoft.Json.JsonReaderException: JSON integer 2627665880 is too large or small for an Int32. Path 'Skin.Model', line 1, position 45.
+   at void Newtonsoft.Json.JsonTextReader.ParseReadNumber(ReadType readType, char firstChar, int initialPosition)
+=========================================================
+
+==================[6/24/2020 9:22:46 PM]==================
+Newtonsoft.Json.JsonReaderException: JSON integer 2627665880 is too large or small for an Int32. Path 'Skin.Model', line 1, position 45.
+   at void Newtonsoft.Json.JsonTextReader.ParseReadNumber(ReadType readType, char firstChar, int initialPosition)
+   at object Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   at int? Newtonsoft.Json.JsonTextReader.ReadAsInt32()
+   at bool Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, bool hasConverter)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, string id)
+=========================================================
+
+==================[6/24/2020 9:22:46 PM]==================
+Newtonsoft.Json.JsonReaderException: JSON integer 2627665880 is too large or small for an Int32. Path 'Skin.Model', line 1, position 45.
+   at void Newtonsoft.Json.JsonTextReader.ParseReadNumber(ReadType readType, char firstChar, int initialPosition)
+   at object Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   at int? Newtonsoft.Json.JsonTextReader.ReadAsInt32()
+   at bool Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, bool hasConverter)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, string id)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, object existingValue)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, object existingValue)
+   at bool Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, object target)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, string id)
+=========================================================
+
+==================[6/24/2020 9:22:46 PM]==================
+Newtonsoft.Json.JsonReaderException: JSON integer 2627665880 is too large or small for an Int32. Path 'Skin.Model', line 1, position 45.
+   at void Newtonsoft.Json.JsonTextReader.ParseReadNumber(ReadType readType, char firstChar, int initialPosition)
+   at object Newtonsoft.Json.JsonTextReader.ReadNumberValue(ReadType readType)
+   at int? Newtonsoft.Json.JsonTextReader.ReadAsInt32()
+   at bool Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, bool hasConverter)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, string id)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, object existingValue)
+   at object Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContr

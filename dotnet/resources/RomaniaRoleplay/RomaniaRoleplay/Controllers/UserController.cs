@@ -1,9 +1,13 @@
-﻿using Domain.Users.Models;
+﻿using Domain.Characters.Models;
+using Domain.Users.Models;
 using GTANetworkAPI;
 using Helper.Common;
 using Newtonsoft.Json;
+using RomaniaRoleplay.Models.CharacterSelection;
 using RomaniaRoleplay.Models.Login;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RomaniaRoleplay.Controllers
 {
@@ -15,24 +19,33 @@ namespace RomaniaRoleplay.Controllers
             LoginViewModel loginModel = JsonConvert.DeserializeObject<LoginViewModel>(loginViewModel);
 
             var encryptedPass = EncryptHelper.ComputeSha512Hash(loginModel.Password);
+            List<CharacterViewModel> charactersList = null;
 
-            var dbPlayer = _usersWorker.GetPlayerInfoByUsernameAndPassword(loginModel.Username, encryptedPass);
-            if (dbPlayer != null)
+            var user = _usersWorker.GetUserByUsernameAndPassword(loginModel.Username, encryptedPass);
+            if (user != null)
             {
-                SetUserDetailsOnSignIn(player, dbPlayer);
-                _usersWorker.Update(dbPlayer);
-
-                player.SetSkin(PedHash.Swat01SMY); //for testing, will be removed
-
-                NAPI.Player.SpawnPlayer(player, new Vector3(-1036.755f, -2737.948f, 21.2772f));
-                NAPI.Entity.SetEntityTransparency(player, 255);
+                SetUserDetailsOnSignIn(player, user);
+                charactersList = GetCharactersByDbPlayerId(user.Id);
             }
-            player.TriggerEvent("onUserLoginResponse", dbPlayer);
+            NAPI.Entity.SetEntityTransparency(player, 255);
+            player.TriggerEvent("onUserLoginResponse", user, charactersList);
 
         }
+
         private void SetUserDetailsOnSignIn(Player player, User user)
         {
             user.LastActiveDate = DateTime.UtcNow;
+            PlayerSignedIn?.Invoke(player, user);
+
+            var character = _realtimeHelper.OnlinePlayersCharacter.FirstOrDefault(x => x.Key == user.Id).Value;
+            PlayerInfoUpdate?.Invoke(user, character);
         }
+
+        private void UpdateUser(User user, Character character)
+        {
+            _usersWorker.Update(user);
+            _charactersWorker.Update(character);
+        }
+
     }
 }

@@ -7,5 +7,10 @@
 
         public const string CreateVehicle = "createvehicle";
         public const string CreateVehicleAlias = "creatveh,CreateVehicle,CreateVeh";
+
+        public const string GetCoordonates = "getcoordonates";
+        public const string GetCoordonatesAlias = "getcoords,GetCoordonates,GetCoords,mycoordonates,MyCoordonates,mycoords,MyCoords";
+
+
     }
 }

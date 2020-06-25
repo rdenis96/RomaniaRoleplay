@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+@font-face {
+    font-family: 'CopyrightHouse';
+    src: url('../../Resources/common/fonts/CopyrightHouseIndustries.ttf')  format('truetype');
+  }
+
+html,
+body {
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    color:white;
+    /* background-image: url('img/background.png'); */
+    background-color: transparent;
+}
+
+.container {
+    height: 100%;
+}
+
+.card {
+    margin-top: 5%;
+    margin-bottom: auto;
+    width: 300px;
+    height: 70%;
+    background-color: rgb(230, 230, 230, 1) !important;
+}
+
+.card-header {
+    background-color: #336d31;
+    padding-bottom: 0;
+    height: 12%;
+}
+
+.card-header h1 {
+    font-family: "CopyrightHouse";
+    text-align: center;
+}
+
+.card-body {
+    max-height: 87%;
+    overflow-y: auto;
+}
+
+.card-footer-extended {
+    background-image: radial-gradient(circle, rgb(190, 190, 190, 1), rgb(230, 230, 230, 1));
+    max-height: 10%;
+    height: 10%;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.7s ease;
+}
+
+.card-footer-extended:hover{
+    color: rgb(230, 230, 230, 1);
+}
+
+.submit-character {
+    background-color: #336d31;
+    max-height: 10%;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.7s ease;
+}
+
+.character-card {
+    background-color: rgb(200, 200, 200, 1) !important;
+    border: 2px solid rgb(190, 190, 190, 1);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.7s ease;
+}
+
+.character-card:hover{
+    background-color: rgb(230, 230, 230, 1) !important;
+}
+
+.character-img {
+    width: 75px;
+    height: 75px;
+    align-content: stretch;
+}
+
+.character-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.logo{
+    position: fixed; 
+    bottom: 0px; 
+    right: 0px;
+}
+
+.logo>img{
+    width: 150px;
+    height: 200px;
+    align-content: stretch;
+}
+
+.no-padding-col > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
