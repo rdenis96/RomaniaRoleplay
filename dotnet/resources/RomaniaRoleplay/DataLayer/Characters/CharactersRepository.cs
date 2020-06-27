@@ -2,6 +2,7 @@
 using Domain.Characters.Models;
 using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,13 +12,20 @@ namespace DataLayer.Characters
     {
         public Character Create(Character entity)
         {
-            bool changesSaved = false;
-            using (var context = new MysqlContext())
+            try
             {
-                context.Characters.Add(entity);
-                changesSaved = context.SaveChanges() > 0;
+                bool changesSaved = false;
+                using (var context = new MysqlContext())
+                {
+                    context.Characters.Add(entity);
+                    changesSaved = context.SaveChanges() > 0;
+                }
+                return changesSaved ? GetById(entity.Id) : null;
             }
-            return changesSaved ? GetById(entity.Id) : null;
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         public bool Delete(Character entity)

@@ -180,7 +180,7 @@ namespace RomaniaRoleplay.Helpers
         private void StartPlayedTimeCounting(Character character)
         {
             Timer timer = new Timer();
-            CharactersPlayedTimeTimers.Add(character.Id, timer);
+            CharactersPlayedTimeTimers.TryAdd(character.Id, timer);
 
             timer.Interval = 1000;
             timer.Elapsed += (object source, ElapsedEventArgs e) =>

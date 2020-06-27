@@ -2,6 +2,8 @@
 using Domain.Users.Models;
 using GTANetworkAPI;
 using Newtonsoft.Json;
+using RomaniaRoleplay.Constants;
+using RomaniaRoleplay.Helpers;
 using RomaniaRoleplay.Models.CharacterCreation;
 using RomaniaRoleplay.Models.CharacterSelection;
 using System.Collections.Generic;
@@ -57,7 +59,19 @@ namespace RomaniaRoleplay.Controllers
 
         private void SetPlayerCharacter(Player player, Character character)
         {
+            ClientCharacterHelper.SetPlayerCharacter(player, character);
+            NAPI.Player.SpawnPlayer(player, new Vector3(-1036.755, -2737.948, 20.2772)); //spawn aeroport for the moment
+            player.Dimension = 0;
             player.TriggerEvent("onPlayerCharacterSet", character);
+        }
+
+        [Command(Commands.SwitchCharacter, Alias = Commands.SwitchCharacterAlias)]
+        public void SwitchCharacter(Player player)
+        {
+            var user = _realtimeHelper.OnlinePlayersAccount.GetValueOrDefault(player.Id);
+            var charactersList = GetCharactersByDbPlayerId(user.Id);
+            player.Dimension = (uint)(player.Id + 1);
+            player.TriggerEvent("onUserSwitchCharacters", user, charactersList);
         }
     }
 }

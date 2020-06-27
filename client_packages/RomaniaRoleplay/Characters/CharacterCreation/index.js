@@ -11,22 +11,33 @@ mp.events.add('submitCreateCharacter', (name) => {
 		Name: name,
 		Skin: skin
 	}
-	var characterJson = JSON.stringify(character);
-	mp.events.callRemote('OnCreateCharacter', characterJson);
+	try {
+		var characterJson = JSON.stringify(character);
+		mp.events.callRemote('OnCreateCharacter', characterJson);
+	} catch (e) {
+		console.log(e);
+	}
 });
 
 mp.events.add('cancelCreateCharacter', () => {
-	createCharacterPage.active = false;
-	mp.events.call("generateSelectionList");
+	try {
+		createCharacterPage.active = false;
+		mp.events.call("generateSelectionList");
+	} catch (e) {
+		console.log(e);
+	}
 });
 
 mp.events.add('onCharacterFinishCreate', (character) => {
-	if (character !== null && character !== 'undefined'){
-		charactersSelectionList.push(character);
-		createCharacterPage.active = false;
-		mp.events.call("generateSelectionList");
-	}
-	else {
-		createCharacterPage.execute(`alert("Caracterul nu a putut fi creat, te rugam sa reincerci!")`);
+	try {
+		if (character !== null && character !== 'undefined') {
+			charactersSelectionList.push(character);
+			createCharacterPage.active = false;
+			mp.events.call("generateSelectionList");
+		} else {
+			createCharacterPage.execute(`alert("Caracterul nu a putut fi creat, te rugam sa reincerci!")`);
+		}
+	} catch (e) {
+		console.log(e);
 	}
 });

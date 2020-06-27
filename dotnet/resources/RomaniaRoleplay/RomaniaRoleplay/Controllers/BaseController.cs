@@ -39,6 +39,7 @@ namespace RomaniaRoleplay.Controllers
         public void OnPlayerConnected(Player player)
         {
             NAPI.Entity.SetEntityTransparency(player, 0);
+            player.Dimension = (uint)(player.Id + 1);
             player.TriggerEvent("onUserConnected");
         }
 

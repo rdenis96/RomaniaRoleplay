@@ -54,6 +54,19 @@ namespace DataLayer.EntityDefinitions
             modelBuilder.Entity<Skin>().Property(p => p.ChinWidth).IsRequired();
             modelBuilder.Entity<Skin>().Property(p => p.ChinShape).IsRequired();
             modelBuilder.Entity<Skin>().Property(p => p.NeckWidth).IsRequired();
+            modelBuilder.Entity<Skin>().OwnsOne(p => p.Clothes,
+                g =>
+                {
+                    g.Property(p => p.Torsos).IsRequired();
+                    g.Property(p => p.Legs).IsRequired();
+                    g.Property(p => p.BagsAndParachutes).IsRequired();
+                    g.Property(p => p.Shoes).IsRequired();
+                    g.Property(p => p.Accessories).IsRequired();
+                    g.Property(p => p.Undershirts).IsRequired();
+                    g.Property(p => p.BodyArmors).IsRequired();
+                    g.Property(p => p.Decals).IsRequired();
+                    g.Property(p => p.Tops).IsRequired();
+                });
         }
     }
 }

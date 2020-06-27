@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Domain.Characters.Models
 {
@@ -6,7 +7,7 @@ namespace Domain.Characters.Models
     {
         public int Id { get; set; }
 
-        public long Model { get; set; }
+        public uint Model { get; set; }
         public int FirstHeadShape { get; set; }
         public int SecondHeadShape { get; set; }
 
@@ -62,6 +63,7 @@ namespace Domain.Characters.Models
         public float ChinWidth { get; set; }
         public float ChinShape { get; set; }
         public float NeckWidth { get; set; }
+        public Clothes Clothes { get; set; }
 
         public override bool Equals(object obj)
         {
@@ -72,6 +74,7 @@ namespace Domain.Characters.Models
         {
             return other != null &&
                    Id == other.Id &&
+                   Model == other.Model &&
                    FirstHeadShape == other.FirstHeadShape &&
                    SecondHeadShape == other.SecondHeadShape &&
                    FirstSkinTone == other.FirstSkinTone &&
@@ -117,13 +120,15 @@ namespace Domain.Characters.Models
                    ChinPosition == other.ChinPosition &&
                    ChinWidth == other.ChinWidth &&
                    ChinShape == other.ChinShape &&
-                   NeckWidth == other.NeckWidth;
+                   NeckWidth == other.NeckWidth &&
+                   EqualityComparer<Clothes>.Default.Equals(Clothes, other.Clothes);
         }
 
         public override int GetHashCode()
         {
             HashCode hash = new HashCode();
             hash.Add(Id);
+            hash.Add(Model);
             hash.Add(FirstHeadShape);
             hash.Add(SecondHeadShape);
             hash.Add(FirstSkinTone);
@@ -170,6 +175,7 @@ namespace Domain.Characters.Models
             hash.Add(ChinWidth);
             hash.Add(ChinShape);
             hash.Add(NeckWidth);
+            hash.Add(Clothes);
             return hash.ToHashCode();
         }
     }

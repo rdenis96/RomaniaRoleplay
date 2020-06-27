@@ -4,6 +4,67 @@ app.controller('characterCreationController',
         $scope.defaultMaleModel = 1885233650;
         $scope.defaultFemaleModel = 2627665880;
 
+        $scope.skin = {
+            Model: $scope.defaultMaleModel,
+            FirstHeadShape: 0,
+            SecondHeadShape: 0,
+            FirstSkinTone: 0,
+            SecondSkinTone: 0,
+            HeadMix: -1.0,
+            SkinMix: -1.0,
+            Hair: 0,
+            FirstHairColor: 0,
+            SecondHairColor: 0,
+            Beard: 0,
+            BeardColor: 0,
+            Chest: 0,
+            ChestColor: 0,
+            Blemishes: 0,
+            Ageing: 0,
+            Complexion: 0,
+            Sundamage: 0,
+            Freckles: 0,
+            EyesColor: 0,
+            Eyebrows: 0,
+            EyebrowsColor: 0,
+            Makeup: 0,
+            Blush: 0,
+            BlushColor: 0,
+            Lipstick: 0,
+            LipstickColor: 0,
+            NoseWidth: -1.0,
+            NoseHeight: -1.0,
+            NoseLength: -1.0,
+            NoseBridge: -1.0,
+            NoseTip: -1.0,
+            NoseShift: -1.0,
+            BrowHeight: -1.0,
+            BrowWidth: -1.0,
+            CheekboneHeight: -1.0,
+            CheekboneWidth: -1.0,
+            CheeksWidth: -1.0,
+            Eyes: -1.0,
+            Lips: -1.0,
+            JawWidth: -1.0,
+            JawHeight: -1.0,
+            ChinLength: -1.0,
+            ChinPosition: -1.0,
+            ChinWidth: -1.0,
+            ChinShape: -1.0,
+            NeckWidth: -1.0,
+            Clothes: {
+                Torsos: 0,
+                Legs: 0,
+                BagsAndParachutes: 0,
+                Shoes: 0,
+                Accessories: 0,
+                Undershirts: 0,
+                BodyArmors: 0,
+                Decals: 0,
+                Tops: 0
+            }
+        };
+
         $scope.skinSlideBars = {
             FirstHeadShape: {
                 Min: 0,
@@ -188,57 +249,45 @@ app.controller('characterCreationController',
             NeckWidth: {
                 Min: -1.0,
                 Max: 1.0
+            },
+            Clothes: {
+                Torsos: {
+                    Min: 0,
+                    Max: $scope.skin.Model == $scope.defaultMaleModel ? 168 : 209
+                },
+                Legs: {
+                    Min: 0,
+                    Max: $scope.skin.Model == $scope.defaultMaleModel ? 126 : 131
+                },
+                BagsAndParachutes: {
+                    Min: 0,
+                    Max: 84
+                },
+                Shoes: {
+                    Min: 0,
+                    Max: $scope.skin.Model == $scope.defaultMaleModel ? 95 : 99
+                },
+                Accessories: {
+                    Min: 0,
+                    Max: $scope.skin.Model == $scope.defaultMaleModel ? 135 : 104
+                },
+                Undershirts: {
+                    Min: 0,
+                    Max: $scope.skin.Model == $scope.defaultMaleModel ? 164 : 200
+                },
+                BodyArmors: {
+                    Min: 0,
+                    Max: 55
+                },
+                Decals: {
+                    Min: 0,
+                    Max: $scope.skin.Model == $scope.defaultMaleModel ? 77 : 72
+                },
+                Tops: {
+                    Min: 0,
+                    Max: $scope.skin.Model == $scope.defaultMaleModel ? 331 : 346
+                }
             }
-        };
-
-        $scope.skin = {
-            Model: $scope.defaultMaleModel,
-            FirstHeadShape: 0,
-            SecondHeadShape: 0,
-            FirstSkinTone: 0,
-            SecondSkinTone: 0,
-            HeadMix: -1.0,
-            SkinMix: -1.0,
-            Hair: 0,
-            FirstHairColor: 0,
-            SecondHairColor: 0,
-            Beard: 0,
-            BeardColor: 0,
-            Chest: 0,
-            ChestColor: 0,
-            Blemishes: 0,
-            Ageing: 0,
-            Complexion: 0,
-            Sundamage: 0,
-            Freckles: 0,
-            EyesColor: 0,
-            Eyebrows: 0,
-            EyebrowsColor: 0,
-            Makeup: 0,
-            Blush: 0,
-            BlushColor: 0,
-            Lipstick: 0,
-            LipstickColor: 0,
-            NoseWidth: -1.0,
-            NoseHeight: -1.0,
-            NoseLength: -1.0,
-            NoseBridge: -1.0,
-            NoseTip: -1.0,
-            NoseShift: -1.0,
-            BrowHeight: -1.0,
-            BrowWidth: -1.0,
-            CheekboneHeight: -1.0,
-            CheekboneWidth: -1.0,
-            CheeksWidth: -1.0,
-            Eyes: -1.0,
-            Lips: -1.0,
-            JawWidth: -1.0,
-            JawHeight: -1.0,
-            ChinLength: -1.0,
-            ChinPosition: -1.0,
-            ChinWidth: -1.0,
-            ChinShape: -1.0,
-            NeckWidth: -1.0,
         };
 
         $scope.$watch('skin', function () {
@@ -298,7 +347,18 @@ app.controller('characterCreationController',
                 ChinPosition: Math.random(),
                 ChinWidth: Math.random(),
                 ChinShape: Math.random(),
-                NeckWidth: Math.random()
+                NeckWidth: Math.random(),
+                Clothes: {
+                    Torsos: getRandomInt($scope.skinSlideBars.Clothes.Torsos.Max),
+                    Legs: getRandomInt($scope.skinSlideBars.Clothes.Legs.Max),
+                    BagsAndParachutes: getRandomInt($scope.skinSlideBars.Clothes.BagsAndParachutes.Max),
+                    Shoes: getRandomInt($scope.skinSlideBars.Clothes.Shoes.Max),
+                    Accessories: getRandomInt($scope.skinSlideBars.Clothes.Accessories.Max),
+                    Undershirts: getRandomInt($scope.skinSlideBars.Clothes.Undershirts.Max),
+                    BodyArmors: getRandomInt($scope.skinSlideBars.Clothes.BodyArmors.Max),
+                    Decals: getRandomInt($scope.skinSlideBars.Clothes.Decals.Max),
+                    Tops: getRandomInt($scope.skinSlideBars.Clothes.Tops.Max)
+                }
             };
             angular.copy(randomSkin, $scope.skin);
         }
@@ -351,7 +411,18 @@ app.controller('characterCreationController',
                 ChinPosition: $scope.skinSlideBars.ChinPosition.Min,
                 ChinWidth: $scope.skinSlideBars.ChinWidth.Min,
                 ChinShape: $scope.skinSlideBars.ChinShape.Min,
-                NeckWidth: $scope.skinSlideBars.NeckWidth.Min
+                NeckWidth: $scope.skinSlideBars.NeckWidth.Min,
+                Clothes: {
+                    Torsos: $scope.skinSlideBars.Clothes.Torsos.Min,
+                    Legs: $scope.skinSlideBars.Clothes.Legs.Min,
+                    BagsAndParachutes: $scope.skinSlideBars.Clothes.BagsAndParachutes.Min,
+                    Shoes: $scope.skinSlideBars.Clothes.Shoes.Min,
+                    Accessories: $scope.skinSlideBars.Clothes.Accessories.Min,
+                    Undershirts: $scope.skinSlideBars.Clothes.Undershirts.Min,
+                    BodyArmors: $scope.skinSlideBars.Clothes.BodyArmors.Min,
+                    Decals: $scope.skinSlideBars.Clothes.Decals.Min,
+                    Tops: $scope.skinSlideBars.Clothes.Tops.Min
+                }
             };
             angular.copy(resetedSkin, $scope.skin);
         }

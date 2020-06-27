@@ -46,15 +46,16 @@ mp.events.add('showCharacter', (characterId) => {
 });
 
 mp.events.add("selectCharacter", (characterId) => {
-    mp.events.callRemote('OnCharacterSelect', characterId);
+    try {
+        mp.events.callRemote('OnCharacterSelect', characterId);
+    } catch (e) {
+        console.log(e);
+    }
 });
 
 mp.events.add("onPlayerCharacterSet", (character) => {
-    setCharacter(character);
+    showCharacterPreview(false);
     characterSelectionPage.active = false;
-    mp.gui.cursor.show(false, false);
-    mp.game.player.setInvincible(false);
-    mp.players.local.freezePosition(false);
-    mp.gui.chat.activate(true);
+    setCharacterLocal(character);
     mp.game.ui.notifications.showWithPicture("Logare reusita", "Bine ai revenit, " + character.Name, "", "CHAR_SOCIAL_CLUB", icon = 0, flashing = false, textColor = -1, bgColor = -1, flashColor = [77, 77, 77, 200])
 });
