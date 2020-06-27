@@ -60,34 +60,34 @@ namespace RomaniaRoleplay.Helpers
                     clothes.TryAdd((int)ClothesIndex.Masks, new ComponentVariation(0, 0));
                     break;
                 case ClothesIndex.Hair:
-                    clothes.TryAdd((int)ClothesIndex.Hair, new ComponentVariation(character.Skin.Hair, 0));
+                    clothes.TryAdd((int)ClothesIndex.Hair, new ComponentVariation(character.Skin.Hair, 0, 2));
                     break;
                 case ClothesIndex.Torsos:
-                    clothes.TryAdd((int)ClothesIndex.Torsos, new ComponentVariation(character.Skin.Clothes.Torsos, 0));
+                    clothes.TryAdd((int)ClothesIndex.Torsos, new ComponentVariation(character.Skin.Clothes.Torsos, character.Skin.Clothes.TorsosColor, 2));
                     break;
                 case ClothesIndex.Legs:
-                    clothes.TryAdd((int)ClothesIndex.Legs, new ComponentVariation(character.Skin.Clothes.Legs, 0));
+                    clothes.TryAdd((int)ClothesIndex.Legs, new ComponentVariation(character.Skin.Clothes.Legs, character.Skin.Clothes.LegsColor, 2));
                     break;
                 case ClothesIndex.BagsAndParachutes:
-                    clothes.TryAdd((int)ClothesIndex.BagsAndParachutes, new ComponentVariation(character.Skin.Clothes.BagsAndParachutes, 0));
+                    clothes.TryAdd((int)ClothesIndex.BagsAndParachutes, new ComponentVariation(character.Skin.Clothes.BagsAndParachutes, character.Skin.Clothes.BagsAndParachutesColor, 2));
                     break;
                 case ClothesIndex.Shoes:
-                    clothes.TryAdd((int)ClothesIndex.Shoes, new ComponentVariation(character.Skin.Clothes.Shoes, 0));
+                    clothes.TryAdd((int)ClothesIndex.Shoes, new ComponentVariation(character.Skin.Clothes.Shoes, character.Skin.Clothes.ShoesColor, 2));
                     break;
                 case ClothesIndex.Accessories:
-                    clothes.TryAdd((int)ClothesIndex.Accessories, new ComponentVariation(character.Skin.Clothes.Accessories, 0));
+                    clothes.TryAdd((int)ClothesIndex.Accessories, new ComponentVariation(character.Skin.Clothes.Accessories, character.Skin.Clothes.AccessoriesColor, 2));
                     break;
                 case ClothesIndex.Undershirts:
-                    clothes.TryAdd((int)ClothesIndex.Undershirts, new ComponentVariation(character.Skin.Clothes.Undershirts, 0));
+                    clothes.TryAdd((int)ClothesIndex.Undershirts, new ComponentVariation(character.Skin.Clothes.Undershirts, character.Skin.Clothes.UndershirtsColor, 2));
                     break;
                 case ClothesIndex.BodyArmors:
-                    clothes.TryAdd((int)ClothesIndex.BodyArmors, new ComponentVariation(character.Skin.Clothes.BodyArmors, 0));
+                    clothes.TryAdd((int)ClothesIndex.BodyArmors, new ComponentVariation(character.Skin.Clothes.BodyArmors, character.Skin.Clothes.BodyArmorsColor, 2));
                     break;
                 case ClothesIndex.Decals:
-                    clothes.TryAdd((int)ClothesIndex.Decals, new ComponentVariation(character.Skin.Clothes.Decals, 0));
+                    clothes.TryAdd((int)ClothesIndex.Decals, new ComponentVariation(character.Skin.Clothes.Decals, character.Skin.Clothes.DecalsColor, 2));
                     break;
                 case ClothesIndex.Tops:
-                    clothes.TryAdd((int)ClothesIndex.Tops, new ComponentVariation(character.Skin.Clothes.Tops, 0));
+                    clothes.TryAdd((int)ClothesIndex.Tops, new ComponentVariation(character.Skin.Clothes.Tops, character.Skin.Clothes.TopsColor, 2));
                     break;
             }
         }

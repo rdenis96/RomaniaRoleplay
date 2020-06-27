@@ -44,7 +44,7 @@ namespace RomaniaRoleplay.Controllers
         }
 
         [ServerEvent(Event.PlayerDisconnected)]
-        public void OnPlayerDisconnected(Player player)
+        public void OnPlayerDisconnected(Player player, DisconnectionType type, string reason)
         {
             PlayerSignedOut?.Invoke(player);
         }

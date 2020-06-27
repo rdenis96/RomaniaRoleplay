@@ -66,6 +66,15 @@ namespace DataLayer.EntityDefinitions
                     g.Property(p => p.BodyArmors).IsRequired();
                     g.Property(p => p.Decals).IsRequired();
                     g.Property(p => p.Tops).IsRequired();
+                    g.Property(p => p.TorsosColor).IsRequired();
+                    g.Property(p => p.LegsColor).IsRequired();
+                    g.Property(p => p.BagsAndParachutesColor).IsRequired();
+                    g.Property(p => p.ShoesColor).IsRequired();
+                    g.Property(p => p.AccessoriesColor).IsRequired();
+                    g.Property(p => p.UndershirtsColor).IsRequired();
+                    g.Property(p => p.BodyArmorsColor).IsRequired();
+                    g.Property(p => p.DecalsColor).IsRequired();
+                    g.Property(p => p.TopsColor).IsRequired();
                 });
         }
     }

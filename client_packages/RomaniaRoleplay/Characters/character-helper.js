@@ -2,192 +2,6 @@ var cameraCharacterPreview = null;
 var defaultMaleModel = 1885233650;
 var defaultFemaleModel = 2627665880;
 
-var SkinSlideBars = {
-    FirstHeadShape: {
-        Min: 0,
-        Max: 45
-    },
-    SecondHeadShape: {
-        Min: 0,
-        Max: 45
-    },
-    FirstSkinTone: {
-        Min: 0,
-        Max: 45
-    },
-    SecondSkinTone: {
-        Min: 0,
-        Max: 45
-    },
-    HeadMix: {
-        Min: 0.0,
-        Max: 1.0
-    },
-    SkinMix: {
-        Min: 0.0,
-        Max: 1.0
-    },
-    Hair: {
-        Min: 0,
-        Max: 74
-    },
-    FirstHairColor: {
-        Min: 0,
-        Max: 63
-    },
-    SecondHairColor: {
-        Min: 0,
-        Max: 63
-    },
-    Beard: {
-        Min: 0,
-        Max: 28
-    },
-    BeardColor: {
-        Min: 0,
-        Max: 63
-    },
-    Chest: {
-        Min: 0,
-        Max: 16
-    },
-    ChestColor: {
-        Min: 0,
-        Max: 63
-    },
-    Blemishes: {
-        Min: 0,
-        Max: 23
-    },
-    Ageing: {
-        Min: 0,
-        Max: 14
-    },
-    Complexion: {
-        Min: 0,
-        Max: 11
-    },
-    Sundamage: {
-        Min: 0,
-        Max: 10
-    },
-    Freckles: {
-        Min: 0,
-        Max: 17
-    },
-    EyesColor: {
-        Min: 0,
-        Max: 31
-    },
-    Eyebrows: {
-        Min: 0,
-        Max: 33
-    },
-    EyebrowsColor: {
-        Min: 0,
-        Max: 63
-    },
-    Makeup: {
-        Min: 0,
-        Max: 74
-    },
-    Blush: {
-        Min: 0,
-        Max: 6
-    },
-    BlushColor: {
-        Min: 0,
-        Max: 63
-    },
-    Lipstick: {
-        Min: 0,
-        Max: 9
-    },
-    LipstickColor: {
-        Min: 0,
-        Max: 63
-    },
-    NoseWidth: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    NoseHeight: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    NoseLength: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    NoseBridge: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    NoseTip: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    NoseShift: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    BrowHeight: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    BrowWidth: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    CheekboneHeight: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    CheekboneWidth: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    CheeksWidth: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    Eyes: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    Lips: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    JawWidth: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    JawHeight: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    ChinLength: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    ChinPosition: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    ChinWidth: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    ChinShape: {
-        Min: -1.0,
-        Max: 1.0
-    },
-    NeckWidth: {
-        Min: -1.0,
-        Max: 1.0
-    }
-};
 
 var defaultSkin = {
     Model: 1885233650,
@@ -239,14 +53,23 @@ var defaultSkin = {
     NeckWidth: -1.0,
     Clothes: {
         Torsos: 0,
+        TorsosColor: 0,
         Legs: 0,
+        LegsColor: 0,
         BagsAndParachutes: 0,
+        BagsAndParachutesColor: 0,
         Shoes: 0,
+        ShoesColor: 0,
         Accessories: 0,
+        AccessoriesColor: 0,
         Undershirts: 0,
+        UndershirtsColor: 0,
         BodyArmors: 0,
+        BodyArmorsColor: 0,
         Decals: 0,
-        Tops: 0
+        DecalsColor: 0,
+        Tops: 0,
+        TopsColor: 0
     }
 };
 
@@ -385,6 +208,7 @@ var setCharacterSkin = function (skin) {
         false);
     player.setComponentVariation(ClothesIndex.Hair, skin.Hair, 0, 2);
     player.setHairColor(skin.FirstHairColor, skin.SecondHairColor);
+    player.setEyeColor(skin.EyesColor);
 
     player.setHeadOverlay(HeadOverlayIds.Blemishes, skin.Blemishes, 1.0, 0, 0);
     if (skin.Model == defaultMaleModel) {
@@ -425,13 +249,13 @@ var setCharacterSkin = function (skin) {
     player.setFaceFeature(FaceFeatureIndexes.ChinShape, skin.ChinShape);
     player.setFaceFeature(FaceFeatureIndexes.NeckWidth, skin.NeckWidth);
 
-    player.setComponentVariation(ClothesIndex.Torsos, skin.Clothes.Torsos, 0, 2);
-    player.setComponentVariation(ClothesIndex.Legs, skin.Clothes.Legs, 0, 2);
-    player.setComponentVariation(ClothesIndex.BagsAndParachutes, skin.Clothes.BagsAndParachutes, 0, 2);
-    player.setComponentVariation(ClothesIndex.Shoes, skin.Clothes.Shoes, 0, 2);
-    player.setComponentVariation(ClothesIndex.Accessories, skin.Clothes.Accessories, 0, 2);
-    player.setComponentVariation(ClothesIndex.Undershirts, skin.Clothes.Undershirts, 0, 2);
-    player.setComponentVariation(ClothesIndex.BodyArmors, skin.Clothes.BodyArmors, 0, 2);
-    player.setComponentVariation(ClothesIndex.Decals, skin.Clothes.Decals, 0, 2);
-    player.setComponentVariation(ClothesIndex.Tops, skin.Clothes.Tops, 0, 2);
+    player.setComponentVariation(ClothesIndex.Torsos, skin.Clothes.Torsos, parseInt(skin.Clothes.TorsosColors), 2);
+    player.setComponentVariation(ClothesIndex.Legs, skin.Clothes.Legs, parseInt(skin.Clothes.LegsColors), 2);
+    player.setComponentVariation(ClothesIndex.BagsAndParachutes, skin.Clothes.BagsAndParachutes, parseInt(skin.Clothes.BagsAndParachutesColors), 2);
+    player.setComponentVariation(ClothesIndex.Shoes, skin.Clothes.Shoes, parseInt(skin.Clothes.ShoesColors), 2);
+    player.setComponentVariation(ClothesIndex.Accessories, skin.Clothes.Accessories, parseInt(skin.Clothes.AccessoriesColors), 2);
+    player.setComponentVariation(ClothesIndex.Undershirts, skin.Clothes.Undershirts, parseInt(skin.Clothes.UndershirtsColors), 2);
+    player.setComponentVariation(ClothesIndex.BodyArmors, skin.Clothes.BodyArmors, parseInt(skin.Clothes.BodyArmorsColors), 2);
+    player.setComponentVariation(ClothesIndex.Decals, skin.Clothes.Decals, parseInt(skin.Clothes.DecalsColors), 2);
+    player.setComponentVariation(ClothesIndex.Tops, skin.Clothes.Tops, parseInt(skin.Clothes.TopsColors), 2);
 };

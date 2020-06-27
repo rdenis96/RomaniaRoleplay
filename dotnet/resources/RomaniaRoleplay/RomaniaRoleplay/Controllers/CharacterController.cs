@@ -71,6 +71,7 @@ namespace RomaniaRoleplay.Controllers
             var user = _realtimeHelper.OnlinePlayersAccount.GetValueOrDefault(player.Id);
             var charactersList = GetCharactersByDbPlayerId(user.Id);
             player.Dimension = (uint)(player.Id + 1);
+            player.Heading = 343;
             player.TriggerEvent("onUserSwitchCharacters", user, charactersList);
         }
     }

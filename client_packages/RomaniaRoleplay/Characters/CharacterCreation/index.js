@@ -35,7 +35,7 @@ mp.events.add('onCharacterFinishCreate', (character) => {
 			createCharacterPage.active = false;
 			mp.events.call("generateSelectionList");
 		} else {
-			createCharacterPage.execute(`alert("Caracterul nu a putut fi creat, te rugam sa reincerci!")`);
+			createCharacterPage.execute(`showErrorMessage("Caracterul nu a putut fi creat deoarece exista deja acelasi nume sau a intervenit o problema! Te rugam sa reincerci!")`);
 		}
 	} catch (e) {
 		console.log(e);

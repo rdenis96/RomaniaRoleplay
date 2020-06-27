@@ -1,13 +1,15 @@
-<!DOCTYPE html5>
+<!DOCTYPE HTML5>
 <html ng-app="romaniaRoleplayApp">
 
 <head>
     <title>Character Creation - Romania Roleplay</title>
 
     <link href="../../Resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="../../Resources/angularjs/Toastr/angular-toastr.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="../../Resources/jQuery/jquery.min.js"></script>
     <script src="../../Resources/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../Resources/angularjs/angular.min.js"></script>
+    <script src="../../Resources/angularjs/Toastr/angular-toastr.tpls.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" rel="stylesheet">
 
     <!--Custom styles-->
@@ -15,12 +17,7 @@
     <script src="script.js"></script>
 </head>
 
-<body ng-controller="characterCreationController">
-    <!-- <div class="d-flex justify-content-start float-left nameAndSubmit pl-5">
-        <input ng-model="characterName" type="text" class="form-control form-control-lg" placeholder="Character name" />
-        <input type="button" class="btn btn-success ml-2" value="Finish" ng-click="createCharacter()">
-        <input type="button" class="btn btn-success ml-2" value="Cancel" ng-click="cancelCreate()">
-    </div> -->
+<body ng-controller="characterCreationController" id="characterCreationController">
     <div class="container">
         <div class="d-flex justify-content-end h-100">
             <!-- Card -->
@@ -350,43 +347,78 @@
                                     <div class="col-md-12 mb-2 text-center">
                                         <label for="firstHairColor">First Hair Color</label>
                                         <input type="range" class="slider" min="0" max="63" step="1" id="firstHairColor"
-                                            ng-model="skin.FirstHairColor">
+                                               ng-model="skin.FirstHairColor">
                                     </div>
                                     <div class="col-md-12 mb-2 text-center">
                                         <label for="secondHairColor">Second Hair Color</label>
                                         <input type="range" class="slider" min="0" max="63" step="1"
-                                            id="secondHairColor" ng-model="skin.SecondHairColor">
+                                               id="secondHairColor" ng-model="skin.SecondHairColor">
                                     </div>
                                     <div class="col-md-12 mb-2 text-center" ng-disabled="skin.Model == defaultFemaleModel">
                                         <label for="beardColor">Beard Color</label>
                                         <input type="range" class="slider" min="0" max="63" step="1" id="beardColor"
-                                            ng-model="skin.BeardColor" ng-disabled="skin.Model == defaultFemaleModel">
+                                               ng-model="skin.BeardColor" ng-disabled="skin.Model == defaultFemaleModel">
                                     </div>
                                     <div class="col-md-12 mb-2 text-center">
                                         <label for="chestColor">Chest Color</label>
                                         <input type="range" class="slider" min="0" max="63" step="1" id="chestColor"
-                                            ng-model="skin.ChestColor">
+                                               ng-model="skin.ChestColor">
                                     </div>
                                     <div class="col-md-12 mb-2 text-center">
                                         <label for="eyesColor">Eyes Color</label>
                                         <input type="range" class="slider" min="0" max="31" step="1" id="eyesColor"
-                                            ng-model="skin.EyesColor">
+                                               ng-model="skin.EyesColor">
                                     </div>
                                     <div class="col-md-12 mb-2 text-center">
                                         <label for="eyebrowsColor">Eyebrows Color</label>
                                         <input type="range" class="slider" min="0" max="63" step="1" id="eyebrowsColor"
-                                            ng-model="skin.EyebrowsColor">
+                                               ng-model="skin.EyebrowsColor">
                                     </div>
                                     <div class="col-md-12 mb-2 text-center" ng-disabled="skin.Model == defaultMaleModel">
                                         <label for="blushColor">Blush Color</label>
                                         <input type="range" class="slider" min="0" max="63" step="1" id="blushColor"
-                                            ng-model="skin.BlushColor" ng-disabled="skin.Model == defaultMaleModel">
+                                               ng-model="skin.BlushColor" ng-disabled="skin.Model == defaultMaleModel">
                                     </div>
                                     <div class="col-md-12 mb-2 text-center" ng-disabled="skin.Model == defaultMaleModel">
                                         <label for="lipstickColor">Lipstick Color</label>
                                         <input type="range" class="slider" min="0" max="63" step="1" id="lipstickColor"
-                                            ng-model="skin.LipstickColor" ng-disabled="skin.Model == defaultMaleModel">
+                                               ng-model="skin.LipstickColor" ng-disabled="skin.Model == defaultMaleModel">
                                     </div>
+                                    <!--<div class="col-md-12 mb-2 text-center">
+                                        <label for="torsosColor">Torsos Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="torsosColor"
+                                               ng-model="skin.Clothes.TorsosColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="legsColor">Legs Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="legsColor"
+                                               ng-model="skin.Clothes.LegsColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="shoesColor">Shoes Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="shoesColor"
+                                               ng-model="skin.Clothes.ShoesColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="accessoriesColor">Accessories Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="accessoriesColor"
+                                               ng-model="skin.Clothes.AccessoriesColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="undershirtsColor">Undershirts Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="undershirtsColor"
+                                               ng-model="skin.Clothes.UndershirtsColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="decalsColor">Decals Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="decalsColor"
+                                               ng-model="skin.Clothes.DecalsColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="topsColor">Tops Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="topsColor"
+                                               ng-model="skin.Clothes.TopsColor">
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -422,11 +454,6 @@
                                             id="legs" ng-model="skin.Clothes.Legs">
                                     </div>
                                     <div class="col-md-12 mb-2 text-center">
-                                        <label for="bagsAndParachutes">Bags And Parachutes</label>
-                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.BagsAndParachutes.Max}}" step="1" id="bagsAndParachutes"
-                                            ng-model="skin.Clothes.BagsAndParachutes">
-                                    </div>
-                                    <div class="col-md-12 mb-2 text-center">
                                         <label for="shoes">Shoes</label>
                                         <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.Shoes.Max}}" step="1" id="shoes"
                                             ng-model="skin.Clothes.Shoes">
@@ -440,11 +467,6 @@
                                         <label for="undershirts">Undershirts</label>
                                         <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.Undershirts.Max}}" step="1" id="undershirts"
                                             ng-model="skin.Clothes.Undershirts">
-                                    </div>
-                                    <div class="col-md-12 mb-2 text-center" >
-                                        <label for="bodyArmors">Body Armors</label>
-                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.BodyArmors.Max}}" step="1" id="bodyArmors"
-                                            ng-model="skin.Clothes.BodyArmors">
                                     </div>
                                     <div class="col-md-12 mb-2 text-center">
                                         <label for="decals">Decals</label>
@@ -494,7 +516,7 @@
         </div>
     </div>
     <div class="logo">
-        <img id src="../../Resources/common/img/logo.png" class="mb-0 mr-0" />
+        <img id="logo" src="../../Resources/common/img/logo.png" class="mb-0 mr-0" />
     </div>
 </body>
 

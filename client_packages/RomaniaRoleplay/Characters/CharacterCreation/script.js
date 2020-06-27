@@ -1,6 +1,22 @@
-var app = angular.module('romaniaRoleplayApp', []);
+var app = angular.module('romaniaRoleplayApp', ['toastr']);
+app.config([
+    'toastrConfig',
+    function (toastrConfig) {
+        angular.extend(toastrConfig, {
+            autoDismiss: true,
+            maxOpened: 1,
+            newestOnTop: true,
+            positionClass: 'toast-top-center',
+            preventDuplicates: false,
+            preventOpenDuplicates: false,
+            target: 'body',
+            closeButton: true,
+            extendedTimeOut: 5000,
+            timeOut: 5000
+        });
+    }]);
 app.controller('characterCreationController',
-    function ($scope, $window) {
+    function ($scope, $window, toastr) {
         $scope.defaultMaleModel = 1885233650;
         $scope.defaultFemaleModel = 2627665880;
 
@@ -61,7 +77,16 @@ app.controller('characterCreationController',
                 Undershirts: 0,
                 BodyArmors: 0,
                 Decals: 0,
-                Tops: 0
+                Tops: 0,
+                TorsosColor: 0,
+                LegsColor: 0,
+                BagsAndParachutesColor: 0,
+                ShoesColor: 0,
+                AccessoriesColor: 0,
+                UndershirtsColor: 0,
+                BodyArmorsColor: 0,
+                DecalsColor: 0,
+                TopsColor: 0
             }
         };
 
@@ -255,37 +280,73 @@ app.controller('characterCreationController',
                     Min: 0,
                     Max: $scope.skin.Model == $scope.defaultMaleModel ? 168 : 209
                 },
+                TorsosColor: {
+                    Min: 0,
+                    Max: 63
+                },
                 Legs: {
                     Min: 0,
                     Max: $scope.skin.Model == $scope.defaultMaleModel ? 126 : 131
+                },
+                LegsColor: {
+                    Min: 0,
+                    Max: 63
                 },
                 BagsAndParachutes: {
                     Min: 0,
                     Max: 84
                 },
+                BagsAndParachutesColor: {
+                    Min: 0,
+                    Max: 63
+                },
                 Shoes: {
                     Min: 0,
                     Max: $scope.skin.Model == $scope.defaultMaleModel ? 95 : 99
+                },
+                ShoesColor: {
+                    Min: 0,
+                    Max: 63
                 },
                 Accessories: {
                     Min: 0,
                     Max: $scope.skin.Model == $scope.defaultMaleModel ? 135 : 104
                 },
+                AccessoriesColor: {
+                    Min: 0,
+                    Max: 63
+                },
                 Undershirts: {
                     Min: 0,
                     Max: $scope.skin.Model == $scope.defaultMaleModel ? 164 : 200
+                },
+                UndershirtsColor: {
+                    Min: 0,
+                    Max: 63
                 },
                 BodyArmors: {
                     Min: 0,
                     Max: 55
                 },
+                BodyArmorsColor: {
+                    Min: 0,
+                    Max: 63
+                },
                 Decals: {
                     Min: 0,
                     Max: $scope.skin.Model == $scope.defaultMaleModel ? 77 : 72
                 },
+                DecalsColor: {
+                    Min: 0,
+                    Max: 63
+                },
                 Tops: {
                     Min: 0,
                     Max: $scope.skin.Model == $scope.defaultMaleModel ? 331 : 346
+                },
+                TopsColor: {
+                    Min: 0,
+                    Max: 63
                 }
             }
         };
@@ -351,13 +412,22 @@ app.controller('characterCreationController',
                 Clothes: {
                     Torsos: getRandomInt($scope.skinSlideBars.Clothes.Torsos.Max),
                     Legs: getRandomInt($scope.skinSlideBars.Clothes.Legs.Max),
-                    BagsAndParachutes: getRandomInt($scope.skinSlideBars.Clothes.BagsAndParachutes.Max),
+                    BagsAndParachutes: 0,
                     Shoes: getRandomInt($scope.skinSlideBars.Clothes.Shoes.Max),
                     Accessories: getRandomInt($scope.skinSlideBars.Clothes.Accessories.Max),
                     Undershirts: getRandomInt($scope.skinSlideBars.Clothes.Undershirts.Max),
-                    BodyArmors: getRandomInt($scope.skinSlideBars.Clothes.BodyArmors.Max),
+                    BodyArmors: 0,
                     Decals: getRandomInt($scope.skinSlideBars.Clothes.Decals.Max),
-                    Tops: getRandomInt($scope.skinSlideBars.Clothes.Tops.Max)
+                    Tops: getRandomInt($scope.skinSlideBars.Clothes.Tops.Max),
+                    TorsosColor: getRandomInt($scope.skinSlideBars.Clothes.TorsosColor.Max),
+                    LegsColor: getRandomInt($scope.skinSlideBars.Clothes.LegsColor.Max),
+                    BagsAndParachutesColor: 0,
+                    ShoesColor: getRandomInt($scope.skinSlideBars.Clothes.ShoesColor.Max),
+                    AccessoriesColor: getRandomInt($scope.skinSlideBars.Clothes.AccessoriesColor.Max),
+                    UndershirtsColor: getRandomInt($scope.skinSlideBars.Clothes.UndershirtsColor.Max),
+                    BodyArmorsColor: 0,
+                    DecalsColor: getRandomInt($scope.skinSlideBars.Clothes.DecalsColor.Max),
+                    TopsColor: getRandomInt($scope.skinSlideBars.Clothes.TopsColor.Max)
                 }
             };
             angular.copy(randomSkin, $scope.skin);
@@ -421,17 +491,34 @@ app.controller('characterCreationController',
                     Undershirts: $scope.skinSlideBars.Clothes.Undershirts.Min,
                     BodyArmors: $scope.skinSlideBars.Clothes.BodyArmors.Min,
                     Decals: $scope.skinSlideBars.Clothes.Decals.Min,
-                    Tops: $scope.skinSlideBars.Clothes.Tops.Min
+                    Tops: $scope.skinSlideBars.Clothes.TopsColor.Min,
+                    TorsosColor: $scope.skinSlideBars.Clothes.TorsosColor.Min,
+                    LegsColor: $scope.skinSlideBars.Clothes.LegsColor.Min,
+                    BagsAndParachutesColor: $scope.skinSlideBars.Clothes.BagsAndParachutesColor.Min,
+                    ShoesColor: $scope.skinSlideBars.Clothes.ShoesColor.Min,
+                    AccessoriesColor: $scope.skinSlideBars.Clothes.AccessoriesColor.Min,
+                    UndershirtsColor: $scope.skinSlideBars.Clothes.UndershirtsColor.Min,
+                    BodyArmorsColor: $scope.skinSlideBars.Clothes.BodyArmorsColor.Min,
+                    DecalsColor: $scope.skinSlideBars.Clothes.DecalsColor.Min,
+                    TopsColor: $scope.skinSlideBars.Clothes.TopsColor.Min
                 }
             };
             angular.copy(resetedSkin, $scope.skin);
-        }
+        };
 
         $scope.cancelCreate = function () {
             $window.mp.trigger('cancelCreateCharacter');
-        }
+        };
 
         $scope.createCharacter = function () {
             $window.mp.trigger('submitCreateCharacter', $scope.characterName);
-        }
+        };
+
+        $scope.showErrorMessage = function (message) {
+            toastr.error(message);
+        };
     });
+
+function showErrorMessage(message) {
+    angular.element(document.getElementById('characterCreationController')).scope().showErrorMessage(message);
+}
