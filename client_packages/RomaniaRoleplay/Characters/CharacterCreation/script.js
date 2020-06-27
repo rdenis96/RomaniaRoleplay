@@ -419,15 +419,15 @@ app.controller('characterCreationController',
                     BodyArmors: 0,
                     Decals: getRandomInt($scope.skinSlideBars.Clothes.Decals.Max),
                     Tops: getRandomInt($scope.skinSlideBars.Clothes.Tops.Max),
-                    TorsosColor: getRandomInt($scope.skinSlideBars.Clothes.TorsosColor.Max),
-                    LegsColor: getRandomInt($scope.skinSlideBars.Clothes.LegsColor.Max),
+                    TorsosColor: 0,
+                    LegsColor: 0,
                     BagsAndParachutesColor: 0,
-                    ShoesColor: getRandomInt($scope.skinSlideBars.Clothes.ShoesColor.Max),
-                    AccessoriesColor: getRandomInt($scope.skinSlideBars.Clothes.AccessoriesColor.Max),
-                    UndershirtsColor: getRandomInt($scope.skinSlideBars.Clothes.UndershirtsColor.Max),
+                    ShoesColor: 0,
+                    AccessoriesColor: 0,
+                    UndershirtsColor: 0,
                     BodyArmorsColor: 0,
-                    DecalsColor: getRandomInt($scope.skinSlideBars.Clothes.DecalsColor.Max),
-                    TopsColor: getRandomInt($scope.skinSlideBars.Clothes.TopsColor.Max)
+                    DecalsColor: 0,
+                    TopsColor: 0
                 }
             };
             angular.copy(randomSkin, $scope.skin);

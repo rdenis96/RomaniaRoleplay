@@ -249,13 +249,13 @@ var setCharacterSkin = function (skin) {
     player.setFaceFeature(FaceFeatureIndexes.ChinShape, skin.ChinShape);
     player.setFaceFeature(FaceFeatureIndexes.NeckWidth, skin.NeckWidth);
 
-    player.setComponentVariation(ClothesIndex.Torsos, skin.Clothes.Torsos, parseInt(skin.Clothes.TorsosColors), 2);
-    player.setComponentVariation(ClothesIndex.Legs, skin.Clothes.Legs, parseInt(skin.Clothes.LegsColors), 2);
-    player.setComponentVariation(ClothesIndex.BagsAndParachutes, skin.Clothes.BagsAndParachutes, parseInt(skin.Clothes.BagsAndParachutesColors), 2);
-    player.setComponentVariation(ClothesIndex.Shoes, skin.Clothes.Shoes, parseInt(skin.Clothes.ShoesColors), 2);
-    player.setComponentVariation(ClothesIndex.Accessories, skin.Clothes.Accessories, parseInt(skin.Clothes.AccessoriesColors), 2);
-    player.setComponentVariation(ClothesIndex.Undershirts, skin.Clothes.Undershirts, parseInt(skin.Clothes.UndershirtsColors), 2);
-    player.setComponentVariation(ClothesIndex.BodyArmors, skin.Clothes.BodyArmors, parseInt(skin.Clothes.BodyArmorsColors), 2);
-    player.setComponentVariation(ClothesIndex.Decals, skin.Clothes.Decals, parseInt(skin.Clothes.DecalsColors), 2);
-    player.setComponentVariation(ClothesIndex.Tops, skin.Clothes.Tops, parseInt(skin.Clothes.TopsColors), 2);
+    player.setComponentVariation(ClothesIndex.Torsos, skin.Clothes.Torsos, skin.Clothes.TorsosColor, 2);
+    player.setComponentVariation(ClothesIndex.Legs, skin.Clothes.Legs, skin.Clothes.LegsColor, 2);
+    player.setComponentVariation(ClothesIndex.BagsAndParachutes, skin.Clothes.BagsAndParachutes, skin.Clothes.BagsAndParachutesColor, 2);
+    player.setComponentVariation(ClothesIndex.Shoes, skin.Clothes.Shoes, skin.Clothes.ShoesColor, 2);
+    player.setComponentVariation(ClothesIndex.Accessories, skin.Clothes.Accessories, skin.Clothes.AccessoriesColor, 2);
+    player.setComponentVariation(ClothesIndex.Undershirts, skin.Clothes.Undershirts, skin.Clothes.UndershirtsColor, 2);
+    player.setComponentVariation(ClothesIndex.BodyArmors, skin.Clothes.BodyArmors, skin.Clothes.BodyArmorsColor, 2);
+    player.setComponentVariation(ClothesIndex.Decals, skin.Clothes.Decals, skin.Clothes.DecalsColor, 2);
+    player.setComponentVariation(ClothesIndex.Tops, skin.Clothes.Tops, skin.Clothes.TopsColor, 2);
 };
