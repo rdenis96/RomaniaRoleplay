@@ -9,6 +9,18 @@ $(document).ready(function (e) {
         mp.trigger('loginInformationToServer', loginModelJson);
     });
 
+    $("input").keypress(function(event){
+        if(event.which == 13){
+            var loginModel = {
+                Username: $('#loginUsername').val(),
+                Password: $('#loginPassword').val()
+            }
+            var loginModelJson = JSON.stringify(loginModel);
+            event.preventDefault();
+            mp.trigger('loginInformationToServer', loginModelJson);
+        }
+      });      
+
     $("#myVideo").prop("autoplay", true);
     $("#myVideo").get(0).load();
 });

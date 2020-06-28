@@ -19,7 +19,7 @@ namespace BusinessLogic.Users
             return result;
         }
 
-        public User GetPlayerInfoByUsernameAndPassword(string username, string password)
+        public User GetUserByUsernameAndPassword(string username, string password)
         {
             var result = _usersRepository.GetByUsernameAndPassword(username, password);
             return result;
@@ -28,6 +28,12 @@ namespace BusinessLogic.Users
         public User GetWrapperByUsername(string username)
         {
             var result = _usersRepository.GetWrapperByUsername(username);
+            return result;
+        }
+
+        public User GetById(int id)
+        {
+            var result = _usersRepository.GetById(id);
             return result;
         }
 

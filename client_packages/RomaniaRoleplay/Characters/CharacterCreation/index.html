@@ -1,0 +1,524 @@
+<!DOCTYPE HTML5>
+<html ng-app="romaniaRoleplayApp">
+
+<head>
+    <title>Character Creation - Romania Roleplay</title>
+
+    <link href="../../Resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="../../Resources/angularjs/Toastr/angular-toastr.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../../Resources/jQuery/jquery.min.js"></script>
+    <script src="../../Resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../Resources/angularjs/angular.min.js"></script>
+    <script src="../../Resources/angularjs/Toastr/angular-toastr.tpls.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" rel="stylesheet">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body ng-controller="characterCreationController" id="characterCreationController">
+    <div class="container">
+        <div class="d-flex justify-content-end h-100">
+            <!-- Card -->
+            <div class="card border-0">
+                <!-- Content -->
+                <div class="row d-flex justify-content-center">
+                    <div class="card mt-0 border-0">
+                        <div class="card-header p-0 z-depth-1 bg-transparent">
+                            <a href="#">
+                                <div class="col-md-12">
+                                    <input ng-model="characterName" type="text" class="form-control form-control-lg"
+                                        placeholder="Character name" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class=" mt-0 border-0 col-md-6 pr-custom-5">
+                        <div class="card-header p-0 z-depth-1" role="tab" id="heading3">
+                            <a href="#heading3">
+                                <div class="col-md-12">
+                                    <h4 ng-click="setModel(defaultMaleModel)"
+                                        class="text-uppercase white-text mb-0 py-2 mt-1">
+                                        Barbat
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-0 border-0 col-md-6 pl-custom-5">
+                        <div class="card-header p-0 z-depth-1" role="tab" id="heading3">
+                            <a href="#heading3">
+                                <div class="col-md-12">
+                                    <h4 ng-click="setModel(defaultFemaleModel)"
+                                        class="text-uppercase white-text mb-0 py-2 mt-1">
+                                        Femeie
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card mt-0 border-0">
+                        <div class="card-header p-0 z-depth-1" role="tab" id="heading3">
+                            <a href="#heading3">
+                                <div class="col-md-12">
+                                    <h4 ng-click="randomSkin()" class="text-uppercase white-text mb-0 py-2 mt-1">
+                                        Random
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--Accordion wrapper-->
+                    <div class="accordion md-accordion accordion-5" id="accordion" role="tablist"
+                        aria-multiselectable="true">
+
+                        <!-- Accordion card -->
+                        <div class="card mt-0 border-0">
+
+                            <!-- Card header -->
+                            <div class="card-header p-0 z-depth-1" role="tab" id="heading30">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse30"
+                                    aria-expanded="true" aria-controls="collapse30">
+                                    <div class="col-md-12">
+                                        <h4 class="text-uppercase white-text mb-0 py-2 mt-1">
+                                            Trasaturi
+                                        </h4>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card body -->
+                            <div id="collapse30" class="collapse show" role="tabpanel" aria-labelledby="heading30"
+                                data-parent="#accordion">
+                                <div class="card-body p-0 rgba-black-light white-text z-depth-1 pt-3 pb-3">
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="firstHeadShape">Mother Head Shape</label>
+                                        <input type="range" class="slider" min="0" max="45" step="1" id="firstHeadShape"
+                                            ng-model="skin.FirstHeadShape">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="secondHeadShape">Father Head Shape</label>
+                                        <input type="range" class="slider" min="0" max="45" step="1"
+                                            id="secondHeadShape" ng-model="skin.SecondHeadShape">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="firstSkinTone">Mother Skin Tone</label>
+                                        <input type="range" class="slider" min="0" max="45" step="1" id="firstSkinTone"
+                                            ng-model="skin.FirstSkinTone">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="secondSkinTone">Father Skin Tone</label>
+                                        <input type="range" class="slider" min="0" max="45" step="1" id="secondSkinTone"
+                                            ng-model="skin.SecondSkinTone">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="headMix">Head Mix</label>
+                                        <input type="range" class="slider" min="0" max="1" step="0.01" id="headMix"
+                                            ng-model="skin.HeadMix">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="skinMix">Skin Mix</label>
+                                        <input type="range" class="slider" min="0" max="1" step="0.01" id="skinMix"
+                                            ng-model="skin.SkinMix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion card -->
+
+                        <!-- Accordion card -->
+                        <div class="card mt-0 border-0">
+
+                            <!-- Card header -->
+                            <div class="card-header p-0 z-depth-1" role="tab" id="heading31">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse31"
+                                    aria-expanded="true" aria-controls="collapse31">
+                                    <div class="col-md-12">
+                                        <h4 class="text-uppercase white-text mb-0 py-2 mt-1">
+                                            Aspect
+                                        </h4>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card body -->
+                            <div id="collapse31" class="collapse" role="tabpanel" aria-labelledby="heading31"
+                                data-parent="#accordion">
+                                <div class="card-body p-0 rgba-black-light white-text z-depth-1 pt-3 pb-3">
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="hair">Hair</label>
+                                        <input type="range" class="slider" min="0" max="74" step="1" id="hair"
+                                            ng-model="skin.Hair">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="blemishes">Blemishes</label>
+                                        <input type="range" class="slider" min="0" max="23" step="1" id="blemishes"
+                                            ng-model="skin.Blemishes">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center" ng-disabled="skin.Model == defaultFemaleModel">
+                                        <label for="beard">Facial Hair</label>
+                                        <input type="range" class="slider" min="0" max="28" step="1" id="beard"
+                                            ng-model="skin.Beard" ng-disabled="skin.Model == defaultFemaleModel">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="eyebrows">Eyebrows</label>
+                                        <input type="range" class="slider" min="0" max="33" step="1" id="eyebrows"
+                                            ng-model="skin.Eyebrows">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="ageing">Ageing</label>
+                                        <input type="range" class="slider" min="0" max="14" step="1" id="ageing"
+                                            ng-model="skin.Ageing">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center" ng-disabled="skin.Model == defaultMaleModel">
+                                        <label for="makeup">Makeup</label>
+                                        <input type="range" class="slider" min="0" max="74" step="1" id="makeup"
+                                            ng-model="skin.Makeup" ng-disabled="skin.Model == defaultMaleModel">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center" ng-disabled="skin.Model == defaultMaleModel">
+                                        <label for="blush">Blush</label>
+                                        <input type="range" class="slider" min="0" max="6" step="1" id="blush"
+                                            ng-model="skin.Blush" ng-disabled="skin.Model == defaultMaleModel">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center" ng-disabled="skin.Model == defaultMaleModel">
+                                        <label for="lipstick">Lipstick</label>
+                                        <input type="range" class="slider" min="0" max="9" step="1" id="lipstick"
+                                            ng-model="skin.Lipstick" ng-disabled="skin.Model == defaultMaleModel">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="freckles">Freckles</label>
+                                        <input type="range" class="slider" min="0" max="17" step="1" id="freckles"
+                                            ng-model="skin.Freckles">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="chestHair">Chest Hair</label>
+                                        <input type="range" class="slider" min="0" max="16" step="1" id="chestHair"
+                                            ng-model="skin.ChestHair">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion card -->
+
+                        <!-- Accordion card -->
+                        <div class="card mt-0 border-0">
+
+                            <!-- Card header -->
+                            <div class="card-header p-0 z-depth-1" role="tab" id="heading32">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse32"
+                                    aria-expanded="true" aria-controls="collapse32">
+                                    <div class="col-md-12">
+                                        <h4 class="text-uppercase white-text mb-0 py-2 mt-1">
+                                            Dimensiuni
+                                        </h4>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card body -->
+                            <div id="collapse32" class="collapse" role="tabpanel" aria-labelledby="heading32"
+                                data-parent="#accordion">
+                                <div class="card-body p-0 rgba-black-light white-text z-depth-1 pt-3 pb-3">
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="noseWidth">Nose Width</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="noseWidth"
+                                            ng-model="skin.NoseWidth">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="noseHeight">Nose Height</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="noseHeight"
+                                            ng-model="skin.NoseHeight">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="noseLength">Nose Length</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="noseLength"
+                                            ng-model="skin.NoseLength">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="noseBridge">Nose Bridge</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="noseBridge"
+                                            ng-model="skin.NoseBridge">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="noseTip">Nose Tip</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="noseTip"
+                                            ng-model="skin.NoseTip">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="noseShift">Nose Shift</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="noseShift"
+                                            ng-model="skin.NoseShift">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="browHeight">Brow Height</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="browHeight"
+                                            ng-model="skin.BrowHeight">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="browWidth">Brow Width</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="browWidth"
+                                            ng-model="skin.BrowWidth">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="cheekboneHeight">Cheekbone Height</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01"
+                                            id="cheekboneHeight" ng-model="skin.CheekboneHeight">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="cheekboneWidth">Cheekbone Width</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01"
+                                            id="cheekboneWidth" ng-model="skin.CheekboneWidth">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="cheeksWidth">Cheeks Width</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="cheeksWidth"
+                                            ng-model="skin.CheeksWidth">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="eyes">Eyes</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="eyes"
+                                            ng-model="skin.Eyes">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="lips">Lips</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="lips"
+                                            ng-model="skin.Lips">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="jawWidth">Jaw Width</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="jawWidth"
+                                            ng-model="skin.JawWidth">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="jawHeight">Jaw Height</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="jawHeight"
+                                            ng-model="skin.JawHeight">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="chinLength">Chin Length</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="chinLength"
+                                            ng-model="skin.ChinLength">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="chinPosition">Chin Position</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01"
+                                            id="chinPosition" ng-model="skin.ChinPosition">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="chinWidth">Chin Width</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="chinWidth"
+                                            ng-model="skin.ChinWidth">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="chinShape">Chin Shape</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="chinShape"
+                                            ng-model="skin.ChinShape">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="neckWidth">Neck Width</label>
+                                        <input type="range" class="slider" min="-1" max="1" step="0.01" id="neckWidth"
+                                            ng-model="skin.NeckWidth">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion card -->
+
+                        <!-- Accordion card -->
+                        <div class="card mt-0 border-0">
+
+                            <!-- Card header -->
+                            <div class="card-header p-0 z-depth-1" role="tab" id="heading33">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse33"
+                                    aria-expanded="true" aria-controls="collapse33">
+                                    <div class="col-md-12">
+                                        <h4 class="text-uppercase white-text mb-0 py-2 mt-1">
+                                            Culori
+                                        </h4>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card body -->
+                            <div id="collapse33" class="collapse" role="tabpanel" aria-labelledby="heading33"
+                                data-parent="#accordion">
+                                <div class="card-body p-0 rgba-black-light white-text z-depth-1 pt-3 pb-3">
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="firstHairColor">First Hair Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="firstHairColor"
+                                               ng-model="skin.FirstHairColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="secondHairColor">Second Hair Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1"
+                                               id="secondHairColor" ng-model="skin.SecondHairColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center" ng-disabled="skin.Model == defaultFemaleModel">
+                                        <label for="beardColor">Beard Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="beardColor"
+                                               ng-model="skin.BeardColor" ng-disabled="skin.Model == defaultFemaleModel">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="chestColor">Chest Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="chestColor"
+                                               ng-model="skin.ChestColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="eyesColor">Eyes Color</label>
+                                        <input type="range" class="slider" min="0" max="31" step="1" id="eyesColor"
+                                               ng-model="skin.EyesColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="eyebrowsColor">Eyebrows Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="eyebrowsColor"
+                                               ng-model="skin.EyebrowsColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center" ng-disabled="skin.Model == defaultMaleModel">
+                                        <label for="blushColor">Blush Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="blushColor"
+                                               ng-model="skin.BlushColor" ng-disabled="skin.Model == defaultMaleModel">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center" ng-disabled="skin.Model == defaultMaleModel">
+                                        <label for="lipstickColor">Lipstick Color</label>
+                                        <input type="range" class="slider" min="0" max="63" step="1" id="lipstickColor"
+                                               ng-model="skin.LipstickColor" ng-disabled="skin.Model == defaultMaleModel">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="torsosColor">Torsos Color</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.TorsosColor.Max}}" step="1" id="torsosColor"
+                                               ng-model="skin.Clothes.TorsosColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="legsColor">Legs Color</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.LegsColor.Max}}" step="1" id="legsColor"
+                                               ng-model="skin.Clothes.LegsColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="shoesColor">Shoes Color</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.ShoesColor.Max}}" step="1" id="shoesColor"
+                                               ng-model="skin.Clothes.ShoesColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="accessoriesColor">Accessories Color</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.AccessoriesColor.Max}}" step="1" id="accessoriesColor"
+                                               ng-model="skin.Clothes.AccessoriesColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="undershirtsColor">Undershirts Color</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.UndershirtsColor.Max}}" step="1" id="undershirtsColor"
+                                               ng-model="skin.Clothes.UndershirtsColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="decalsColor">Decals Color</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.DecalsColor.Max}}" step="1" id="decalsColor"
+                                               ng-model="skin.Clothes.DecalsColor">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="topsColor">Tops Color</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.TopsColor.Max}}" step="1" id="topsColor"
+                                               ng-model="skin.Clothes.TopsColor">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion card -->
+                        
+                        <!-- Accordion card -->
+                        <div class="card mt-0 border-0">
+
+                            <!-- Card header -->
+                            <div class="card-header p-0 z-depth-1" role="tab" id="heading34">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse34"
+                                    aria-expanded="true" aria-controls="collapse34">
+                                    <div class="col-md-12">
+                                        <h4 class="text-uppercase white-text mb-0 py-2 mt-1">
+                                            Vestimentatie
+                                        </h4>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card body -->
+                            <div id="collapse34" class="collapse" role="tabpanel" aria-labelledby="heading34"
+                                data-parent="#accordion">
+                                <div class="card-body p-0 rgba-black-light white-text z-depth-1 pt-3 pb-3">
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="torsos">Torsos</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.Torsos.Max}}" step="1" id="torsos"
+                                            ng-model="skin.Clothes.Torsos">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="legs">Legs</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.Legs.Max}}" step="1"
+                                            id="legs" ng-model="skin.Clothes.Legs">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="shoes">Shoes</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.Shoes.Max}}" step="1" id="shoes"
+                                            ng-model="skin.Clothes.Shoes">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="accessories">Accessories</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.Accessories.Max}}" step="1" id="accessories"
+                                            ng-model="skin.Clothes.Accessories">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="undershirts">Undershirts</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.Undershirts.Max}}" step="1" id="undershirts"
+                                            ng-model="skin.Clothes.Undershirts">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="decals">Decals</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.Decals.Max}}" step="1" id="decals"
+                                            ng-model="skin.Clothes.Decals">
+                                    </div>
+                                    <div class="col-md-12 mb-2 text-center">
+                                        <label for="tops">Tops</label>
+                                        <input type="range" class="slider" min="0" max="{{$scope.skinSlideBars.Clothes.Tops.Max}}" step="1" id="tops"
+                                            ng-model="skin.Clothes.Tops">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion card -->
+                    </div>
+
+                    <div class=" mt-0 border-0 col-md-6 pr-custom-5">
+                        <div class="card-header p-0 z-depth-1 mainButton" >
+                            <a href="#">
+                                <div class="col-md-12">
+                                    <h4 ng-click="createCharacter()"
+                                        class="text-uppercase white-text mb-0 py-2 mt-1">
+                                        Finish
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-0 border-0 col-md-6 pl-custom-5">
+                        <div class="card-header p-0 z-depth-1 mainButton">
+                            <a href="#">
+                                <div class="col-md-12 ">
+                                    <h4 ng-click="cancelCreate()"
+                                        class="text-uppercase white-text mb-0 py-2 mt-1">
+                                        Cancel
+                                    </h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.Accordion wrapper-->
+                </div>
+                <!-- Content -->
+            </div>
+            <!-- Card -->
+        </div>
+    </div>
+    <div class="logo">
+        <img id="logo" src="../../Resources/common/img/logo.png" class="mb-0 mr-0" />
+    </div>
+</body>
+
+
+</html>
