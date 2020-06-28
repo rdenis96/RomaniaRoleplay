@@ -30,7 +30,16 @@ namespace DataLayer.Characters
 
         public bool Delete(Character entity)
         {
-            throw new System.NotImplementedException();
+            if (entity == null)
+                return false;
+            using (var context = new MysqlContext())
+            {
+                context.Characters.Remove(entity);
+                bool changesSaved = context.SaveChanges() > 0;
+                if (context.Characters.Contains(entity))
+                    return false;
+                return changesSaved;
+            }
         }
 
         public IEnumerable<Character> GetAll()

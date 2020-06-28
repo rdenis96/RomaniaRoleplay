@@ -30,11 +30,37 @@ namespace RomaniaRoleplay.Controllers
             }
         }
 
+        [RemoteEvent("ValidateCreateCharacter")]
+        public void ValidateCreateCharacter(Player player)
+        {
+            var canGetUser = _realtimeHelper.OnlinePlayersAccount.TryGetValue(player.Id, out User user);
+            if (canGetUser)
+            {
+                var characters = _charactersWorker.GetAllByUserId(user.Id);
+                if (characters.Count < 5)
+                {
+                    player.TriggerEvent("initCreateCharacter");
+                }
+            }
+        }
+
         [RemoteEvent("OnCharacterSelect")]
         public void CharacterSelect(Player player, int characterId)
         {
             Character character = _charactersWorker.GetById(characterId);
             PlayerSelectedCharacter?.Invoke(player, character);
+        }
+
+        [RemoteEvent("OnRemoveCharacter")]
+        public void RemmoveCharacter(Player player, int characterId)
+        {
+            Character character = _charactersWorker.GetById(characterId);
+            bool isDeleted = false;
+            if (character != null)
+            {
+                isDeleted = _charactersWorker.Delete(character);
+            }
+            player.TriggerEvent("onCharacterFinishRemove", isDeleted ? characterId : 0);
         }
 
         private List<CharacterViewModel> GenerateCharacterListForUser(int userId)

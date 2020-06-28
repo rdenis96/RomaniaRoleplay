@@ -41,3 +41,19 @@ mp.events.add('onCharacterFinishCreate', (character) => {
 		console.log(e);
 	}
 });
+
+
+mp.events.add('onCharacterFinishRemove', (characterId) => {
+	try {
+		if (characterId !== null && character !== 'undefined' && characterId > 0) {
+			var character = charactersSelectionList.find(elem => elem.Id == characterId);
+			if (character !== null && character !== undefined) {
+				var index = charactersSelectionList.indexOf(character);
+				charactersSelectionList.splice(index, 1);
+			}
+			mp.events.call("generateSelectionList");
+		}
+	} catch (e) {
+		console.log(e);
+	}
+});

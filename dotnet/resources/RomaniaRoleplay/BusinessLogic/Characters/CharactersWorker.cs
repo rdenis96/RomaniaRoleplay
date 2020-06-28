@@ -54,6 +54,12 @@ namespace BusinessLogic.Characters
             return null;
         }
 
+        public bool Delete(Character character)
+        {
+            var result = _charactersRepository.Delete(character);
+            return result;
+        }
+
         public Character Update(Character character)
         {
             var result = _charactersRepository.Update(character);

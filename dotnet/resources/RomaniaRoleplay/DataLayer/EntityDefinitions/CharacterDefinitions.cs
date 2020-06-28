@@ -12,7 +12,7 @@ namespace DataLayer.EntityDefinitions
             modelBuilder.Entity<Character>().Property(p => p.Name).IsRequired();
             modelBuilder.Entity<Character>().Property(p => p.NameTag).IsRequired();
             modelBuilder.Entity<Character>().Property(p => p.Level).IsRequired();
-            modelBuilder.Entity<Character>().HasOne(p => p.Skin).WithMany().HasForeignKey(p => p.SkinId).IsRequired();
+            modelBuilder.Entity<Character>().HasOne(p => p.Skin).WithMany().HasForeignKey(p => p.SkinId).OnDelete(DeleteBehavior.Cascade).IsRequired();
             modelBuilder.Entity<Character>().Property(p => p.Money).IsRequired();
             modelBuilder.Entity<Character>().Property(p => p.BankMoney).IsRequired();
             modelBuilder.Entity<Character>().Property(p => p.LastActiveDate).IsRequired().HasColumnType("datetime");

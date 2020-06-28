@@ -30,7 +30,11 @@ mp.events.add('generateSelectionList', () => {
     characterSelectionPage.active = true;
 });
 
-mp.events.add("initCreateCaracter", () => {
+mp.events.add("validateCreateCharacter", () => {
+    mp.events.callRemote('ValidateCreateCharacter');
+});
+
+mp.events.add("initCreateCharacter", () => {
     characterSelectionPage.active = false;
     setCharacterSkin();
     createCharacterPage.active = true;
@@ -40,8 +44,6 @@ mp.events.add('showCharacter', (characterId) => {
     var character = charactersSelectionList.find(elem => elem.Id == characterId);
     if (character !== null && character !== undefined) {
         setCharacterSkin(character.Skin);
-    } else {
-        characterSelectionPage.execute(`alert("${character.Id} -- ${character.Skin}")`);
     }
 });
 
@@ -58,4 +60,12 @@ mp.events.add("onPlayerCharacterSet", (character) => {
     characterSelectionPage.active = false;
     setCharacterLocal(character);
     mp.game.ui.notifications.showWithPicture("Logare reusita", "Bine ai revenit, " + character.Name, "", "CHAR_SOCIAL_CLUB", icon = 0, flashing = false, textColor = -1, bgColor = -1, flashColor = [77, 77, 77, 200])
+});
+
+mp.events.add("removeCharacter", (characterId) => {
+    try {
+        mp.events.callRemote('OnRemoveCharacter', characterId);
+    } catch (e) {
+        console.log(e);
+    }
 });

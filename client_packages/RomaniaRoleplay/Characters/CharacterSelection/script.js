@@ -2,7 +2,7 @@ var selectedCharacterId = -1;
 
 $(document).ready(function (e) {
     $("#createCharacter").click(function(){
-        mp.trigger('initCreateCaracter');
+        mp.trigger('validateCreateCharacter');
     });
 });
 
@@ -18,8 +18,7 @@ function submitSelectedCharacter(){
     }
 }
 
-// function selectCharacter(event, characterId){
-//     if(event.keyCode == 13){
-//         mp.trigger('selectCharacter', characterId);
-//     }
-// };
+function removeCharacter() {
+    mp.trigger('removeCharacter', selectedCharacterId);
+    selectedCharacterId = -1;
+}
