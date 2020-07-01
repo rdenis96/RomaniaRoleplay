@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.Common.Models;
+using System;
+using System.Collections.Generic;
 
 namespace Domain.Characters.Models
 {
@@ -13,6 +15,9 @@ namespace Domain.Characters.Models
         public Skin Skin { get; set; }
         public long Money { get; set; }
         public long BankMoney { get; set; }
+        public int AdminLevel { get; set; }
+        public int TesterLevel { get; set; }
+        public Mute Mute { get; set; }
         public DateTime LastActiveDate { get; set; }
         public double TimePlayed { get; set; }
 
@@ -30,8 +35,12 @@ namespace Domain.Characters.Models
                    NameTag == other.NameTag &&
                    Level == other.Level &&
                    SkinId == other.SkinId &&
+                   EqualityComparer<Skin>.Default.Equals(Skin, other.Skin) &&
                    Money == other.Money &&
                    BankMoney == other.BankMoney &&
+                   AdminLevel == other.AdminLevel &&
+                   TesterLevel == other.TesterLevel &&
+                   EqualityComparer<Mute>.Default.Equals(Mute, other.Mute) &&
                    LastActiveDate == other.LastActiveDate &&
                    TimePlayed == other.TimePlayed;
         }
@@ -45,8 +54,12 @@ namespace Domain.Characters.Models
             hash.Add(NameTag);
             hash.Add(Level);
             hash.Add(SkinId);
+            hash.Add(Skin);
             hash.Add(Money);
             hash.Add(BankMoney);
+            hash.Add(AdminLevel);
+            hash.Add(TesterLevel);
+            hash.Add(Mute);
             hash.Add(LastActiveDate);
             hash.Add(TimePlayed);
             return hash.ToHashCode();

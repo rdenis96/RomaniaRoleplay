@@ -23,6 +23,7 @@ namespace RomaniaRoleplay.Controllers
             _charactersWorker = new CharactersWorker();
             _realtimeHelper = RealtimeHelper.Instance;
             RealtimeHelper.PlayerUpdate += UpdateUser;
+            PlayerInfoUpdate += UpdateUser;
             PlayerSelectedCharacter += SetPlayerCharacter;
         }
 
@@ -33,6 +34,7 @@ namespace RomaniaRoleplay.Controllers
         {
             NAPI.Server.SetAutoSpawnOnConnect(false);
             NAPI.Server.SetAutoRespawnAfterDeath(true);
+            NAPI.Server.SetGlobalServerChat(false);
         }
 
         [ServerEvent(Event.PlayerConnected)]

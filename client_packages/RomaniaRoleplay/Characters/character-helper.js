@@ -100,7 +100,7 @@ var showCharacterPreview = function (shouldShow) {
                 mp.game.player.setInvincible(true);
             }, 10);
             setTimeout(function () {
-                mp.gui.chat.activate(false);
+                activateChat(false);
             }, 1000);
         } catch (e) {
             console.log(e);
@@ -108,7 +108,7 @@ var showCharacterPreview = function (shouldShow) {
     } else {
         try {
             mp.game.ui.displayRadar(true);
-            mp.gui.chat.show(true);
+            activateChat(true);
             cameraCharacterPreview.setActive(false);
             mp.game.cam.renderScriptCams(false, true, 0, true, true);
             cameraCharacterPreview.destroy();
@@ -122,7 +122,7 @@ var showCharacterPreview = function (shouldShow) {
                 mp.game.player.setInvincible(false);
             }, 10);
             setTimeout(function () {
-                mp.gui.chat.activate(true);
+                activateChat(true);
             }, 1000);
         } catch (e) {
             console.log(e);

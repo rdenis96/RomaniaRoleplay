@@ -71,6 +71,7 @@ namespace DataLayer.Characters
             using (var context = new MysqlContext())
             {
                 context.Entry(entity).State = EntityState.Modified;
+                context.Entry(entity.Mute).State = EntityState.Modified;
                 changesSaved = context.SaveChanges() > 0;
             }
             return changesSaved ? entity : null;

@@ -18,27 +18,19 @@ namespace RomaniaRoleplay.Helpers
         public static event OnPlayerInfoUpdate PlayerUpdate;
 
         public Dictionary<int, User> OnlinePlayersAccount;
-        public Dictionary<int, User> OnlineAdminsAccount;
 
         /// <summary>
         /// Key value from Dictionary represents the Id from Users table
         /// </summary>
         public Dictionary<int, Character> OnlinePlayersCharacter;
 
-        public List<Player> OnlinePlayersClient { get; set; }
-        public List<Player> OnlineAdminsClient { get; set; }
-
         public Dictionary<int, Timer> CharactersPlayedTimeTimers { get; set; }
 
         private RealtimeHelper()
         {
             OnlinePlayersAccount = new Dictionary<int, User>();
-            OnlineAdminsAccount = new Dictionary<int, User>();
 
             OnlinePlayersCharacter = new Dictionary<int, Character>();
-
-            OnlinePlayersClient = new List<Player>();
-            OnlineAdminsClient = new List<Player>();
 
             CharactersPlayedTimeTimers = new Dictionary<int, Timer>();
 
@@ -70,16 +62,55 @@ namespace RomaniaRoleplay.Helpers
             }
         }
 
-        public Player GetOnlinePlayer(int playerId)
+        public Player GetPlayerById(int playerId)
         {
-            var player = OnlinePlayersClient.FirstOrDefault(x => x.Id == playerId);
-            return player;
+            var result = NAPI.Pools.GetAllPlayers().FirstOrDefault(x => x.Id == playerId);
+            return result;
         }
 
         public User GetOnlineUserInfo(int playerId)
         {
             var player = OnlinePlayersAccount.FirstOrDefault(x => x.Key == playerId);
             return player.Value;
+        }
+
+        public Character GetCharacterByPlayerId(int playerId)
+        {
+            var user = OnlinePlayersAccount.FirstOrDefault(x => x.Key == playerId).Value;
+            if (user != null)
+            {
+                var character = OnlinePlayersCharacter.FirstOrDefault(x => x.Key == user.Id);
+                return character.Value;
+            }
+            return null;
+        }
+
+        public List<Player> GetAllOnlineClientAdmins()
+        {
+            var onlineAdmins = new List<Player>();
+            NAPI.Pools.GetAllPlayers().ForEach(player =>
+            {
+                var playerCharacter = GetCharacterByPlayerId(player.Id);
+                if (playerCharacter != null && playerCharacter.AdminLevel > 0)
+                {
+                    onlineAdmins.Add(player);
+                }
+            });
+            return onlineAdmins;
+        }
+
+        public List<Player> GetAllOnlineClientTesters()
+        {
+            var onlineTesters = new List<Player>();
+            NAPI.Pools.GetAllPlayers().ForEach(player =>
+            {
+                var playerCharacter = GetCharacterByPlayerId(player.Id);
+                if (playerCharacter != null && playerCharacter.TesterLevel > 0)
+                {
+                    onlineTesters.Add(player);
+                }
+            });
+            return onlineTesters;
         }
 
         public void ExecuteActionOnPlayer(Player player, string target, Action<Player, User, Character> func)
@@ -92,12 +123,12 @@ namespace RomaniaRoleplay.Helpers
             }
             else
             {
-                isTargetOnline = OnlinePlayersClient.Any(x => x.Name.Equals(target));
+                isTargetOnline = NAPI.Pools.GetAllPlayers().Any(x => x.Name.Equals(target));
             }
 
             if (isTargetOnline)
             {
-                var targetModel = isTargetId ? OnlinePlayersClient.FirstOrDefault(x => x.Id == targetId) : OnlinePlayersClient.FirstOrDefault(x => x.Name == target);
+                var targetModel = isTargetId ? NAPI.Pools.GetAllPlayers().FirstOrDefault(x => x.Id == targetId) : NAPI.Pools.GetAllPlayers().FirstOrDefault(x => x.Name == target);
                 if (targetModel != null)
                 {
                     var targetUserModel = OnlinePlayersAccount.FirstOrDefault(x => x.Key == targetModel.Id).Value;
@@ -117,21 +148,22 @@ namespace RomaniaRoleplay.Helpers
             }
         }
 
+        public void ExecuteActionOnSelf(Player player, Action<User, Character> func)
+        {
+            var user = OnlinePlayersAccount.FirstOrDefault(x => x.Key == player.Id).Value;
+            if (user != null)
+            {
+                var character = OnlinePlayersCharacter.FirstOrDefault(x => x.Key == user.Id).Value;
+                if (character != null)
+                {
+                    func(user, character);
+                }
+            }
+        }
+
         private void OnPlayerSignedIn(Player player, User user)
         {
             OnlinePlayersAccount.TryAdd(player.Id, user);
-            if (OnlinePlayersClient.FirstOrDefault(x => x.Id == player.Id) == null)
-            {
-                OnlinePlayersClient.Add(player);
-            }
-
-            //if (dbPlayer.Admin.AdminLevel > Domain.Enums.Admins.AdminLevels.None)
-            //{
-            //    OnlineAdminsAccount.Add(player.Id, dbPlayer);
-            //    OnlineAdminsClient.Add(player);
-            //}
-
-            //StartPlayedTimeCounting(user);
         }
 
         private void OnPlayerSignedOut(Player player)
@@ -145,26 +177,6 @@ namespace RomaniaRoleplay.Helpers
             }
 
             OnlinePlayersAccount.Remove(player.Id);
-            var playerToRemove = OnlinePlayersClient.FirstOrDefault(x => x.Id == player.Id);
-            if (playerToRemove != null)
-            {
-                OnlinePlayersClient.Remove(playerToRemove);
-            }
-
-            var playerPair = OnlineAdminsAccount.FirstOrDefault(x => x.Key == player.Id);
-            if (playerPair.Value != null)
-            {
-                var dbPlayer = playerPair.Value;
-                //if (dbPlayer.Admin.AdminLevel > Domain.Enums.Admins.AdminLevels.None)
-                //{
-                //    OnlineAdminsAccount.Remove(player.Id);
-                //    var adminToRemove = OnlineAdminsClient.FirstOrDefault(x => x.Id == player.Id);
-                //    if (adminToRemove != null)
-                //    {
-                //        OnlineAdminsClient.Remove(adminToRemove);
-                //    }
-                //}
-            }
         }
 
         private void OnPlayerSelectedCharacter(Player player, Character character)
@@ -174,6 +186,8 @@ namespace RomaniaRoleplay.Helpers
             {
                 OnlinePlayersCharacter.TryAdd(user.Id, character);
                 StartPlayedTimeCounting(character);
+                character.LastActiveDate = DateTime.UtcNow;
+                PlayerUpdate?.Invoke(null, character);
             }
         }
 
