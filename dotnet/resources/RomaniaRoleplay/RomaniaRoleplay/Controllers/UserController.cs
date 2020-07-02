@@ -7,7 +7,6 @@ using RomaniaRoleplay.Models.CharacterSelection;
 using RomaniaRoleplay.Models.Login;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace RomaniaRoleplay.Controllers
 {
@@ -36,15 +35,19 @@ namespace RomaniaRoleplay.Controllers
         {
             user.LastActiveDate = DateTime.UtcNow;
             PlayerSignedIn?.Invoke(player, user);
-
-            var character = _realtimeHelper.OnlinePlayersCharacter.FirstOrDefault(x => x.Key == user.Id).Value;
-            PlayerInfoUpdate?.Invoke(user, character);
+            PlayerInfoUpdate?.Invoke(user, null);
         }
 
         private void UpdateUser(User user, Character character)
         {
-            _usersWorker.Update(user);
-            _charactersWorker.Update(character);
+            if (user != null)
+            {
+                _usersWorker.Update(user);
+            }
+            if (character != null)
+            {
+                _charactersWorker.Update(character);
+            }
         }
 
     }

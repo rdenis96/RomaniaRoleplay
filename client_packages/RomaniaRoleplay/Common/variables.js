@@ -6,3 +6,5 @@ var characterSelectionPage = null;
 var charactersSelectionList = [];
 
 var createCharacterPage = null;
+
+var chatPage = null;

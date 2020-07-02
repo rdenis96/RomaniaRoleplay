@@ -1,7 +1,7 @@
 require('./RomaniaRoleplay/Characters/character-helper.js');
 
 mp.events.add('onUserConnected', () => {
-	mp.gui.chat.activate(false);
+	activateChat(false);
 	mp.game.player.setInvincible(true);
 	player.freezePosition(true);
 	welcomePage.active = true;

@@ -6,6 +6,7 @@ using RomaniaRoleplay.Constants;
 using RomaniaRoleplay.Helpers;
 using RomaniaRoleplay.Models.CharacterCreation;
 using RomaniaRoleplay.Models.CharacterSelection;
+using System;
 using System.Collections.Generic;
 
 namespace RomaniaRoleplay.Controllers
@@ -94,11 +95,19 @@ namespace RomaniaRoleplay.Controllers
         [Command(Commands.SwitchCharacter, Alias = Commands.SwitchCharacterAlias)]
         public void SwitchCharacter(Player player)
         {
-            var user = _realtimeHelper.OnlinePlayersAccount.GetValueOrDefault(player.Id);
-            var charactersList = GetCharactersByDbPlayerId(user.Id);
-            player.Dimension = (uint)(player.Id + 1);
-            player.Heading = 343;
-            player.TriggerEvent("onUserSwitchCharacters", user, charactersList);
+            try
+            {
+                var user = _realtimeHelper.OnlinePlayersAccount.GetValueOrDefault(player.Id);
+                _realtimeHelper.OnlinePlayersCharacter.Remove(user.Id);
+                var charactersList = GetCharactersByDbPlayerId(user.Id);
+                player.Dimension = (uint)(player.Id + 1);
+                player.Heading = 343;
+                player.TriggerEvent("onUserSwitchCharacters", user, charactersList);
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }
