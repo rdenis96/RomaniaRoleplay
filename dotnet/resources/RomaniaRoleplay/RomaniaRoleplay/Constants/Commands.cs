@@ -34,5 +34,11 @@
 
         public const string UnMute = "unmute";
         public const string UnMuteAlias = "UnMute";
+
+        public const string Goto = "goto";
+        public const string GotoAlias = "GoTo";
+
+        public const string AKick = "akick";
+        public const string AKickAlias = "AKick";
     }
 }

@@ -2,8 +2,8 @@
 using Helper.Chat;
 using Helper.Chat.Enums;
 using RomaniaRoleplay.Constants;
+using RomaniaRoleplay.Helpers;
 using System;
-using System.Threading.Tasks;
 
 namespace RomaniaRoleplay.Controllers
 {
@@ -59,11 +59,10 @@ namespace RomaniaRoleplay.Controllers
             {
                 if (character.AdminLevel >= 1)
                 {
+                    var adminMessage = $"{ChatHelper.GetChatColor(ChatColors.None)}{message}";
                     var onlineAdmins = _realtimeHelper.GetAllOnlineClientAdmins();
-                    Parallel.ForEach(onlineAdmins, new ParallelOptions { MaxDegreeOfParallelism = 2 }, (admin) =>
-                     {
-                         admin.SendChatMessage($"{ChatHelper.GetChatColor(ChatColors.ChatAdminsColor)}[Admin {character.AdminLevel}] {player.Name}", $"{ChatHelper.GetChatColor(ChatColors.None)}{message}");
-                     });
+                    var sender = $"{ChatHelper.GetChatColor(ChatColors.ChatAdminsColor)}[Admin {character.AdminLevel}] {player.Name}";
+                    AdminHelper.SendMessageToAdmins(adminMessage, onlineAdmins, sender);
                 }
                 else
                 {
@@ -78,7 +77,7 @@ namespace RomaniaRoleplay.Controllers
             try
             {
                 var character = _realtimeHelper.GetCharacterByPlayerId(player.Id);
-                if (character != null && character.AdminLevel >= 1)
+                if (character != null && (character.AdminLevel >= 1 || character.TesterLevel >= 1))
                 {
                     _realtimeHelper.ExecuteActionOnPlayer(player, target, (targetPlayer, targetUser, targetCharacter) =>
                     {
@@ -90,10 +89,7 @@ namespace RomaniaRoleplay.Controllers
 
                         var adminMessage = $"{ChatHelper.GetChatColor(ChatColors.Orange)}Administratorul {player.Name} {ChatHelper.GetChatColor(ChatColors.None)}l-a blocat pe loc pe jucatorul {ChatHelper.GetChatColor(ChatColors.Orange)}{targetPlayer.Name}{ChatHelper.GetChatColor(ChatColors.None)}!";
                         var onlineAdmins = _realtimeHelper.GetAllOnlineClientAdmins();
-                        Parallel.ForEach(onlineAdmins, new ParallelOptions { MaxDegreeOfParallelism = 2 }, (admin) =>
-                        {
-                            admin.SendChatMessage(adminMessage);
-                        });
+                        AdminHelper.SendMessageToAdmins(adminMessage, onlineAdmins);
                     });
                 }
                 else
@@ -113,7 +109,7 @@ namespace RomaniaRoleplay.Controllers
             try
             {
                 var character = _realtimeHelper.GetCharacterByPlayerId(player.Id);
-                if (character != null && character.AdminLevel >= 1)
+                if (character != null && (character.AdminLevel >= 1 || character.TesterLevel >= 1))
                 {
                     _realtimeHelper.ExecuteActionOnPlayer(player, target, (targetPlayer, targetUser, targetCharacter) =>
                     {
@@ -127,10 +123,7 @@ namespace RomaniaRoleplay.Controllers
 
                             var adminMessage = $"{ChatHelper.GetChatColor(ChatColors.Orange)}Administratorul {player.Name} {ChatHelper.GetChatColor(ChatColors.None)}l-a deblocat de pe loc pe jucatorul {ChatHelper.GetChatColor(ChatColors.Orange)}{targetPlayer.Name}{ChatHelper.GetChatColor(ChatColors.None)}!";
                             var onlineAdmins = _realtimeHelper.GetAllOnlineClientAdmins();
-                            Parallel.ForEach(onlineAdmins, new ParallelOptions { MaxDegreeOfParallelism = 2 }, (admin) =>
-                            {
-                                admin.SendChatMessage(adminMessage);
-                            });
+                            AdminHelper.SendMessageToAdmins(adminMessage, onlineAdmins);
                         }
                         else
                         {
@@ -155,7 +148,7 @@ namespace RomaniaRoleplay.Controllers
             try
             {
                 var character = _realtimeHelper.GetCharacterByPlayerId(player.Id);
-                if (character != null && character.AdminLevel >= 1)
+                if (character != null && (character.AdminLevel >= 1 || character.TesterLevel >= 1))
                 {
                     _realtimeHelper.ExecuteActionOnPlayer(player, target, (targetPlayer, targetUser, targetCharacter) =>
                     {
@@ -179,10 +172,7 @@ namespace RomaniaRoleplay.Controllers
                                                 {ChatHelper.GetChatColor(ChatColors.None)}pana la data de 
                                                 {ChatHelper.GetChatColor(ChatColors.Orange)} {targetCharacter.Mute.ExpirationTime}!";
                         var onlineAdmins = _realtimeHelper.GetAllOnlineClientAdmins();
-                        Parallel.ForEach(onlineAdmins, new ParallelOptions { MaxDegreeOfParallelism = 2 }, (admin) =>
-                        {
-                            admin.SendChatMessage(adminMessage);
-                        });
+                        AdminHelper.SendMessageToAdmins(adminMessage, onlineAdmins);
                     });
                 }
                 else
@@ -202,7 +192,7 @@ namespace RomaniaRoleplay.Controllers
             try
             {
                 var character = _realtimeHelper.GetCharacterByPlayerId(player.Id);
-                if (character != null && character.AdminLevel >= 1)
+                if (character != null && (character.AdminLevel >= 1 || character.TesterLevel >= 1))
                 {
                     _realtimeHelper.ExecuteActionOnPlayer(player, target, (targetPlayer, targetUser, targetCharacter) =>
                     {
@@ -218,10 +208,7 @@ namespace RomaniaRoleplay.Controllers
 
                             var adminMessage = $"{ChatHelper.GetChatColor(ChatColors.Orange)}Administratorul {player.Name} {ChatHelper.GetChatColor(ChatColors.None)}i-a scos mute-ul jucatorului {ChatHelper.GetChatColor(ChatColors.Orange)}{targetPlayer.Name}{ChatHelper.GetChatColor(ChatColors.None)}!";
                             var onlineAdmins = _realtimeHelper.GetAllOnlineClientAdmins();
-                            Parallel.ForEach(onlineAdmins, new ParallelOptions { MaxDegreeOfParallelism = 2 }, (admin) =>
-                            {
-                                admin.SendChatMessage(adminMessage);
-                            });
+                            AdminHelper.SendMessageToAdmins(adminMessage, onlineAdmins);
                         }
                         else
                         {
@@ -237,6 +224,61 @@ namespace RomaniaRoleplay.Controllers
             catch (Exception ex)
             {
                 player.SendChatMessage("/unmute <id/name>");
+            }
+        }
+
+        [Command(Commands.Goto, Alias = Commands.GotoAlias)]
+        public void Goto(Player player, string target)
+        {
+            try
+            {
+                var character = _realtimeHelper.GetCharacterByPlayerId(player.Id);
+                if (character != null && character.AdminLevel >= 1)
+                {
+                    _realtimeHelper.ExecuteActionOnPlayer(player, target, (targetPlayer, targetUser, targetCharacter) =>
+                    {
+                        player.Position = new Vector3(targetPlayer.Position.X, targetPlayer.Position.Y, targetPlayer.Position.Z);
+                        var adminMessage = $"{ChatHelper.GetChatColor(ChatColors.Orange)}Administratorul {player.Name} {ChatHelper.GetChatColor(ChatColors.None)}s-a teleportat la jucatorul {ChatHelper.GetChatColor(ChatColors.Orange)}{targetPlayer.Name}{ChatHelper.GetChatColor(ChatColors.None)}!";
+                        var onlineAdmins = _realtimeHelper.GetAllOnlineClientAdmins();
+                        AdminHelper.SendMessageToAdmins(adminMessage, onlineAdmins);
+                    });
+                }
+                else
+                {
+                    player.SendChatMessage($"{ChatHelper.GetChatColor(ChatColors.Red)}Nu esti autorizat sa folosesti aceasta comanda!");
+                }
+            }
+            catch (Exception ex)
+            {
+                player.SendChatMessage("/freeze <id/name>");
+            }
+        }
+
+        [Command(Commands.AKick, Alias = Commands.AKickAlias)]
+        public void AKick(Player player, string target)
+        {
+            try
+            {
+                var character = _realtimeHelper.GetCharacterByPlayerId(player.Id);
+                if (character != null && character.AdminLevel >= 1)
+                {
+                    _realtimeHelper.ExecuteActionOnPlayer(player, target, (targetPlayer, targetUser, targetCharacter) =>
+                    {
+                        player.Kick();
+
+                        var adminMessage = $"{ChatHelper.GetChatColor(ChatColors.Orange)}Administratorul {player.Name} {ChatHelper.GetChatColor(ChatColors.None)}i-a dat kick jucatorului {ChatHelper.GetChatColor(ChatColors.Orange)}{targetPlayer.Name}{ChatHelper.GetChatColor(ChatColors.None)}!";
+                        var onlineAdmins = _realtimeHelper.GetAllOnlineClientAdmins();
+                        AdminHelper.SendMessageToAdmins(adminMessage, onlineAdmins);
+                    });
+                }
+                else
+                {
+                    player.SendChatMessage($"{ChatHelper.GetChatColor(ChatColors.Red)}Nu esti autorizat sa folosesti aceasta comanda!");
+                }
+            }
+            catch (Exception ex)
+            {
+                player.SendChatMessage("/freeze <id/name>");
             }
         }
     }
